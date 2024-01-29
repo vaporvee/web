@@ -1,0 +1,23 @@
+@import './_var.scss';
+
+:root {
+    color-scheme: dark;
+}
+
+body {
+    background-color: $primary;
+    font-family: "Satoshi-Regular", "Arial";
+}
+
+h1 {
+    font-family: "Tanker-Regular", "Arial";
+    font-size: 72px;
+}
+
+.content {
+    background-color: $highlight-primary;
+    margin: 10vw;
+    margin-right: 30vw;
+    padding: 2vw;
+    border-radius: 25px;
+}
