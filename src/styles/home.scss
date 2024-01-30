@@ -1,11 +1,23 @@
 .home-title-box {
-    margin-top: 16.6vh;
-    margin-left: 11.3vw;
+    padding-top: 10vh;
+    margin-left: 10vw;
 }
 
 .home-title {
     margin: 0;
     color: #FFF;
     font-family: "Tanker-Regular";
-    font-size: 128px;
+}
+
+main {
+    background-image: url("/diagonal_lines_home.png");
+    height: 75vh;
+    margin-left: -1vw;
+    margin-bottom: 13vh;
+    width: 100.4vw;
+    flex-shrink: 0;
+}
+
+.using-engines {
+    display: inline-flex;
 }

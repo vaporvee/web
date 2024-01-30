@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "astro": "^4.2.6",
+    "astro-meta-tags": "^0.2.1",
+    "astro-min": "^1.1.0-dev.4",
     "npx": "^3.0.0",
     "sass": "^1.70.0"
   }

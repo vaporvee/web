@@ -1,0 +1,72 @@
+---
+const routes = {
+    Home: "/",
+    Projects: "/projects",
+    Tutorials: "/tutorials",
+    Docs: "/docs",
+    Blog: "/blog",
+};
+---
+
+<header>
+    <img class="logo" src="/favicon.svg" alt="Logo Icon" />
+    <nav>
+        {
+            Object.entries(routes).map(([pageName, path]) => {
+                const isActive =
+                    (Astro.url.pathname.startsWith(path) && path !== "/") ||
+                    Astro.url.pathname === path;
+
+                return (
+                    <div class="navbar-entry">
+                        <a href={path} class={isActive ? "active" : ""}>
+                            {pageName}
+                        </a>
+
+                        {isActive ? (
+                            <div class="highlighter">
+                                <img src="/nav_highlight.svg" />
+                            </div>
+                        ) : null}
+                    </div>
+                );
+            })
+        }
+    </nav>
+</header>
+
+<style lang="scss">
+    nav {
+        margin-left: 2.5vw;
+        display: flex;
+        justify-content: center;
+    }
+    .navbar-entry {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .highlighter {
+        margin-top: -2vh;
+    }
+    header {
+        padding-top: 2.5vh;
+        padding-bottom: 2.5vh;
+        display: inline-flex;
+        align-items: center;
+    }
+    .logo {
+        margin-left: 2.3vw;
+        width: 40px;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        margin-inline: 0.9vw;
+    }
+    .active {
+        font-family: "Satoshi-Bold";
+        color: #7eca9c;
+    }
+</style>

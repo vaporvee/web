@@ -7,6 +7,10 @@ interface Props {
 const { title } = Astro.props;
 const { description } = Astro.props;
 import "../styles/main.scss";
+
+import Navbar from "../components/Navbar.astro";
+
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -18,8 +22,10 @@ import "../styles/main.scss";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>vaporvee's Website | {title}</title>
+		<ViewTransitions />
 	</head>
 	<body>
+		<Navbar />
 		<slot />
 	</body>
 </html>
