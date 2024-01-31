@@ -1,6 +1,6 @@
 .home-title-box {
-    padding-top: 10vh;
-    margin-left: 10vw;
+    position: absolute;
+    margin-top: 15vh;
 }
 
 .home-title {
@@ -14,10 +14,17 @@ main {
     height: 75vh;
     margin-left: -1vw;
     margin-bottom: 13vh;
-    width: 100.4vw;
+    width: 90.4vw;
     flex-shrink: 0;
+    padding-left: 10vw;
 }
 
 .using-engines {
     display: inline-flex;
+}
+
+.content {
+    position: absolute;
+    margin-left: 45vw;
+    margin-right: 8vw;
 }

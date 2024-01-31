@@ -17,8 +17,17 @@ h1 {
 
 .content {
     background-color: $highlight-primary;
-    margin: 10vw;
-    margin-right: 30vw;
-    padding: 2vw;
     border-radius: 25px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    padding: 1.8vw;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin: 5vw;
+}
+
+b {
+    font-family: "Satoshi-Bold";
+    color: $accent;
 }
