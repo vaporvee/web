@@ -8,6 +8,8 @@ body {
     background-color: $primary;
     font-family: "Satoshi-Regular", "Arial";
     font-size: 16px;
+    position: relative;
+    min-height: 95vh;
 }
 
 h1 {
@@ -18,9 +20,9 @@ h1 {
     background-color: $highlight-primary;
     border-radius: 25px;
     box-shadow: 0px 4px 4px 0px #00000040;
-    display: flexbox;
     padding: 2vw;
-    margin: 4vw;
+    margin-inline: 20vw;
+    margin-bottom: 11vh;
 }
 
 
@@ -42,6 +44,7 @@ a {
 .astro-code {
     padding: 15px;
     border-radius: 25px;
+    max-width: 50vw;
 }
 
 code {
@@ -50,4 +53,13 @@ code {
     padding-block: 2px;
     margin: 2px;
     border-radius: 25px;
+}
+
+h1,
+h2,
+h3 {
+    a {
+        color: white;
+        text-decoration: none;
+    }
 }

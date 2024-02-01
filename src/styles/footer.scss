@@ -1,9 +1,11 @@
 footer {
-    display: inline-flexbox;
+    display: flexbox;
     align-items: center;
     text-align: center;
-    margin: 5vh;
+    position: absolute;
     bottom: 0;
+    width: 100%;
+    margin-bottom: 2vh;
 
     a {
         color: white;

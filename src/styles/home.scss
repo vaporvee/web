@@ -1,7 +1,9 @@
 main {
     background-image: url("/diagonal_lines_home.png");
-    background-size: cover, contain;
-    margin-inline: -.6vw;
+    background-size: cover;
+    background-repeat: repeat;
+    margin-inline: -.10vw;
+    height: 75vh;
     padding-inline: 10vw;
 
     .home-main-box {
