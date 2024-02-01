@@ -9,6 +9,7 @@ const { description } = Astro.props;
 import "../styles/main.scss";
 
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 import { ViewTransitions } from "astro:transitions";
 ---
@@ -27,5 +28,6 @@ import { ViewTransitions } from "astro:transitions";
 	<body>
 		<Navbar />
 		<slot />
+		<Footer />
 	</body>
 </html>

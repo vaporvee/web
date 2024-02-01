@@ -9,8 +9,8 @@ const routes = {
 ---
 
 <header>
-    <img class="logo" src="/favicon.svg" alt="Logo Icon" />
     <nav>
+        <a href="/"><img class="logo" src="/favicon.svg" alt="Logo Icon" /></a>
         {
             Object.entries(routes).map(([pageName, path]) => {
                 const isActive =
@@ -33,13 +33,19 @@ const routes = {
             })
         }
     </nav>
+    <a href="https://github.com/vaporvee"
+        ><img
+            src="/github-mark.svg"
+            alt="My GitHub account"
+            class="github"
+        /></a
+    >
 </header>
 
 <style lang="scss">
     nav {
-        margin-left: 2.5vw;
+        justify-self: flex-start;
         display: flex;
-        justify-content: center;
     }
     .navbar-entry {
         display: flex;
@@ -52,11 +58,13 @@ const routes = {
     header {
         padding-top: 2.5vh;
         padding-bottom: 2.5vh;
-        display: inline-flex;
+        margin-inline: 2.5vw;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
     }
     .logo {
-        margin-left: 2.3vw;
+        margin-right: 2.5vw;
         width: 40px;
     }
     a {
