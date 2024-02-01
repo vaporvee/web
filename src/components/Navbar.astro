@@ -6,6 +6,7 @@ const routes = {
     Docs: "/docs",
     Blog: "/blog",
 };
+import "../styles/navbar.scss";
 ---
 
 <header>
@@ -34,14 +35,14 @@ const routes = {
         }
     </nav>
     <div>
-        <a href="https://github.com/vaporvee"
+        <a href="https://github.com/vaporvee" target="_blank"
             ><img
                 src="/github-mark.svg"
                 alt="My GitHub account"
                 class="social"
             /></a
         >
-        <a href="https://www.linkedin.com/in/yannik-ain/"
+        <a href="https://www.linkedin.com/in/yannik-ain/" target="_blank"
             ><img
                 src="/linkedin-icon.svg"
                 alt="My Linkedin account"
@@ -50,43 +51,3 @@ const routes = {
         >
     </div>
 </header>
-
-<style lang="scss">
-    nav {
-        justify-self: flex-start;
-        display: inline-flex;
-    }
-    .navbar-entry {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .highlighter {
-        margin-top: -2vh;
-    }
-    header {
-        padding-top: 2.5vh;
-        padding-bottom: 2.5vh;
-        margin-inline: 2.5vw;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .logo {
-        margin-right: 2.5vw;
-        width: 40px;
-    }
-    a {
-        color: white;
-        text-decoration: none;
-        text-align: center;
-        margin-inline: 0.9vw;
-    }
-    .active {
-        font-family: "Satoshi-Bold";
-        color: #7eca9c;
-    }
-    .social {
-        width: 22px;
-    }
-</style>

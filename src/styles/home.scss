@@ -1,6 +1,13 @@
-.home-title-box {
-    position: absolute;
-    margin-top: 12vh;
+main {
+    background-image: url("/diagonal_lines_home.png");
+    padding-inline: 10vw;
+}
+
+.home-main-box {
+    padding-block: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .home-title {
@@ -9,21 +16,17 @@
     font-family: "Tanker-Regular";
 }
 
-main {
-    background-image: url("/diagonal_lines_home.png");
-    height: 73vh;
-    margin-left: -1vw;
-    width: 90.4vw;
-    flex-shrink: 0;
-    padding-left: 10vw;
-}
-
-.using-engines {
-    display: inline-flex;
+.home-title-box {
+    justify-self: flex-start;
+    margin-right: 5vw;
 }
 
 .content {
-    position: absolute;
-    margin-left: 45vw;
-    margin-right: 8vw;
+    justify-self: flex-end;
+    margin: 0;
+    max-width: 450px;
+}
+
+.using-engines {
+    width: 21vw;
 }

@@ -1,0 +1,44 @@
+nav {
+    justify-self: flex-start;
+    display: inline-flex;
+}
+
+.navbar-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.highlighter {
+    margin-top: -10px;
+}
+
+header {
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    margin-inline: 2.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 2.5vw;
+    width: 40px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin-inline: 0.9vw;
+}
+
+.active {
+    font-family: "Satoshi-Bold";
+    color: #7eca9c;
+}
+
+.social {
+    width: 22px;
+}
