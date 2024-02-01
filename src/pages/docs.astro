@@ -1,5 +1,10 @@
 ---
+import { date } from "astro/zod";
 import Layout from "../layouts/Layout.astro";
+const allDocs = await Astro.glob("./docs/*.mdx");
+const fileteredDocs = allDocs.sort(
+    (a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date),
+);
 ---
 
 <Layout

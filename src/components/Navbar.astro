@@ -17,7 +17,6 @@ import "../styles/navbar.scss";
                 const isActive =
                     (Astro.url.pathname.startsWith(path) && path !== "/") ||
                     Astro.url.pathname === path;
-
                 return (
                     <div class="navbar-entry">
                         <a href={path} class={isActive ? "active" : ""}>
