@@ -1,10 +1,20 @@
 import { defineConfig } from 'astro/config';
 import minify from 'astro-min';
 import metaTags from "astro-meta-tags";
-
-import mdx from "@astrojs/mdx";
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [minify(), metaTags(), mdx()]
+  integrations: [minify(), metaTags()],
+  markdown: {
+    rehypePlugins: [
+      rehypeSlug,
+      [rehypeAutolinkHeadings, { behavior: 'prepend' }],
+    ],
+    drafts: true,
+    shikiConfig: {
+      theme: 'dracula',
+    },
+  },
 });

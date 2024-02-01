@@ -12,7 +12,6 @@ body {
 
 h1 {
     font-family: "Tanker-Regular", "Arial";
-    font-size: 72px;
 }
 
 .content {
@@ -24,6 +23,13 @@ h1 {
     margin: 4vw;
 }
 
+
+td {
+    border-inline: 15px solid;
+    border-color: #ffffff00;
+}
+
+
 b {
     font-family: "Satoshi-Bold";
     color: $accent;
@@ -31,4 +37,17 @@ b {
 
 a {
     color: $link;
+}
+
+.astro-code {
+    padding: 15px;
+    border-radius: 25px;
+}
+
+code {
+    background-color: #282a36;
+    padding-inline: 10px;
+    padding-block: 2px;
+    margin: 2px;
+    border-radius: 25px;
 }
