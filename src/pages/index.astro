@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/home.scss";
+
+const yannikAge = new Date().getFullYear() - 2004; // 31/12/2003
 ---
 
 <Layout
@@ -25,7 +27,8 @@ import "../styles/home.scss";
 		<div class="content">
 			<p>
 				Hello my name is <b>Yannik</b>!<br />
-				I’m a 20 year old <b>Game Developer</b> living <b>in Germany</b
+				I’m a {yannikAge} year old <b>Game Developer</b> living <b
+					>in Germany</b
 				>.<br />
 				I mostly code in C++, Godot Engine's GDScript and C#.<br />
 				I am mostly self taught but i cant really say when i began to learn
