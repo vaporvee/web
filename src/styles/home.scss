@@ -1,0 +1,32 @@
+main {
+    background-image: url("/diagonal_lines_home.png");
+    padding-inline: 10vw;
+}
+
+.home-main-box {
+    padding-block: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-title {
+    margin: 0;
+    color: #FFF;
+    font-family: "Tanker-Regular";
+}
+
+.home-title-box {
+    justify-self: flex-start;
+    margin-right: 5vw;
+}
+
+.content {
+    justify-self: flex-end;
+    margin: 0;
+    max-width: 450px;
+}
+
+.using-engines {
+    width: 21vw;
+}
