@@ -2,13 +2,21 @@
 const year = new Date().getFullYear();
 ---
 
-<footer>&copy vaporvee 2021-{year}</footer>
+<footer>
+    &copy vaporvee 2021-{year} 🞄 <a href="https://github.com/vaporvee/web"
+        >Sourcecode</a
+    >
+</footer>
 
 <style lang="scss">
     footer {
         display: inline-flexbox;
         align-items: center;
         text-align: center;
-        margin-top: -7vh;
+        margin: 5vh;
+        bottom: 0;
+        a {
+            color: white;
+        }
     }
 </style>
