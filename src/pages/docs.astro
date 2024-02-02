@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const unsortedDocs = await Astro.glob("./docs/*/*.md");
+const unsortedDocs = await Astro.glob("./docs/*/*.mdx");
 const docs = unsortedDocs
     .sort(
         (a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date),
