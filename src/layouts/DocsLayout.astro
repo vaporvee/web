@@ -1,12 +1,14 @@
 ---
 const { frontmatter } = Astro.props;
 import Layout from "../layouts/Layout.astro";
-const title = "Docs | " + frontmatter.title;
+const title = frontmatter.title + "| Docs";
 ---
 
 <Layout
     title={title}
     description="This is my personal website with my projects, docs and other useful stuff."
 >
-    <div class="content"><slot /></div>
+    <div class="content">
+        <h1 style="text-align: center;">{frontmatter.title}</h1><slot />
+    </div>
 </Layout>
