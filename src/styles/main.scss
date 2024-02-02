@@ -19,6 +19,7 @@ h1 {
 .content {
     background-color: $highlight-primary;
     border-radius: 25px;
+    border: 1px solid lighten($highlight-primary, 16%);
     box-shadow: 0px 4px 4px 0px #00000040;
     padding: 2vw;
     margin-inline: 20vw;

@@ -4,28 +4,31 @@ title: Home
 draft: true
 ---
 
-> [!IMPORTANT]
-> The GameSDK's Achievements, Applications, Voice, Images, Lobbies, Networking, Storage, and Store (purchases and discounts) features have been deprecated and will not be added. <br /> However the rest is and will still be supported by Discord.
+:::note{title="Important Discord Game SDK information"}
+The GameSDK's Achievements, Applications, Voice, Images, Lobbies, Networking, Storage, and Store (purchases and discounts) features have been deprecated and will not be added. <br /> However the rest is and will still be supported by Discord.
+:::
 
 **[![apple](https://github.com/vaporvee/discord-sdk-godot/assets/80621863/6d2c7a54-bfc9-4c8d-955a-40fa5c9e8c74)About MacOS Support](https://github.com/vaporvee/discord-sdk-godot/wiki/Building#macos-support)**<br />
 
-> [!WARNING]
-> The plugin only works with 4.2 and above for the current version
+:::warn
+The plugin only works with 4.2 and above for the current version
+:::
+<br/>
+:::assert
+To make anything work in the plugin make sure to run
 
-> [!NOTE]
-> To make anything work in the plugin make sure to run
->
-> ```gdscript
-> func _process(_delta):
->     DiscordSDK.run_callbacks()
-> ```
->
-> This happens normaly inside the Autoload wich should be automatically added by the plugin. <br />
-> Something that does **not get added automatically** is your `app_id`. It is also mandatory to be able to use anything in the plugin.
->
-> ```gdscript
-> DiscordSDK.app_id = #<your Application ID>
-> ```
+ ```gdscript
+ func _process(_delta):
+     DiscordSDK.run_callbacks()
+ ```
+
+ This happens normaly inside the Autoload wich should be automatically added by the plugin. <br />
+ Something that does **not get added automatically** is your `app_id`. It is also mandatory to be able to use anything in the plugin.
+
+ ```gdscript
+ DiscordSDK.app_id = #<your Application ID>
+ ```
+:::
 
 # Quick start
 
@@ -66,8 +69,6 @@ func _ready():
 [**Try a built demo**](https://github.com/vaporvee/discord-sdk-godot/releases/latest/download/Demo-Export.zip)<br /><br />
 
 # Troubleshooting
-
-> [!TIP]
-> First of all try reinstalling the plugin and restart both your Godot Editor and your Discord client.
-> <details><summary><b>I have no errors in my Godot console from the plugin but my Activity doesn't show up in my Discord Client.</b></summary>Make sure a `DiscordSDK.run_callbacks()` function runs in a `_process(delta)` function. This should happen in the Autoload added by the plugin. If it still doesn't help, try the Demo above. If still nothing appears in your Discord profile card, you have to reset the depending settings in you Discord or reinstall it.</details>
-> <details><summary><b>I have a lot of `DiscordSDK not declared` errors spammed in my Godot Console and i can't use the plugin.</b></summary> Make sure the plugin is actually enabled. Then the plugin should work and after the second restart you shouldn't get any errors from the plugin. But if it still gives you the errors delete the file `/addons/discord-sdk-gd/bin/.gdignore` and restart the editor manually.</details>
+First of all try reinstalling the plugin and restart both your Godot Editor and your Discord client.
+<details><summary><b>I have no errors in my Godot console from the plugin but my Activity doesn't show up in my Discord Client.</b></summary>Make sure a `DiscordSDK.run_callbacks()` function runs in a `_process(delta)` function. This should happen in the Autoload added by the plugin. If it still doesn't help, try the Demo above. If still nothing appears in your Discord profile card, you have to reset the depending settings in you Discord or reinstall it.</details>
+<details><summary><b>I have a lot of `DiscordSDK not declared` errors spammed in my Godot Console and i can't use the plugin.</b></summary> Make sure the plugin is actually enabled. Then the plugin should work and after the second restart you shouldn't get any errors from the plugin. But if it still gives you the errors delete the file `/addons/discord-sdk-gd/bin/.gdignore` and restart the editor manually.</details>
