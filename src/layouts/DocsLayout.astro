@@ -2,6 +2,10 @@
 const { frontmatter } = Astro.props;
 import Layout from "../layouts/Layout.astro";
 const title = frontmatter.title + "| Docs";
+const unsortedDocs = await Astro.glob("../pages/docs/*/*.mdx");
+const docs = unsortedDocs
+  .sort((a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date))
+  .filter((doc) => doc.frontmatter.repo === frontmatter.repo);
 ---
 
 <Layout
@@ -20,8 +24,16 @@ const title = frontmatter.title + "| Docs";
     <hr />
     <br />
     <slot />
-    <div class="sidebar">
-      <a href={"/docs/" + frontmatter.repo}>{frontmatter.repo}</a>
-    </div>
+  </div>
+  <div class="sidebar">
+    <a href={"/docs/" + frontmatter.repo}>Home</a><br />
+    {
+      docs.map((page) => (
+        <>
+          <a href={page.url}>{page.frontmatter.title}</a>
+          <br />
+        </>
+      ))
+    }
   </div>
 </Layout>

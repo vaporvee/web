@@ -16,32 +16,39 @@ h1 {
     font-family: "Tanker-Regular", "Arial";
 }
 
+main{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .content {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
     background-color: $highlight-primary;
     border-radius: 25px;
     border: 1px solid lighten($highlight-primary, 16%);
     box-shadow: 0px 4px 4px 0px #00000040;
     padding: 2vw;
-    margin-inline: 10vw;
+    width: 60vw;
     margin-bottom: 11vh;
 }
 .second-content {
+    align-self: center;
     text-align: center;
     $second-content-clr: #6e6e6e40;
     background-color: $second-content-clr;
     border-radius: 25px;
     border: 1px solid lighten($second-content-clr, 16%);
-    width: 80vh;
-    padding: 1vh;
+    width: 42vw;
+    padding: 2vh;
     margin-inline: 10vw;
     margin-bottom: 11vh;
 }
 
 .sidebar{
-    position: absolute;
     right: 0;
     top: 0;
-    margin-top: 10.5vh;
 }
 
 

@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import "../styles/docs.scss";
 const unsortedDocs = await Astro.glob("./docs/*/index.mdx");
 const docs = unsortedDocs.sort(
   (a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date)
@@ -13,7 +12,7 @@ const docs = unsortedDocs.sort(
 >
   <main>
     <div class="content">
-      <h1>Docs</h1>
+      <h1 style="text-align: center;">Docs</h1>
       {
         docs.map((doc) => (
           <div class="second-content">
@@ -31,7 +30,7 @@ const docs = unsortedDocs.sort(
             {doc.frontmatter.has_thumbnail ? (
               <a href={doc.url}>
                 <img
-                  width="800vh"
+                  width="100%"
                   src={"/img/docs/thumbnails/" + doc.frontmatter.repo + ".webp"}
                 />
               </a>

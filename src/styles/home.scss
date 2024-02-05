@@ -1,4 +1,10 @@
-main {
+main{
+    display: unset;
+    flex-direction: unset;
+    align-items: unset;
+}
+
+.lines {
     background-image: url("/diagonal_lines_home.png");
     background-size: cover;
     background-repeat: repeat;
