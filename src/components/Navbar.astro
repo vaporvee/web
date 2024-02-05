@@ -1,52 +1,48 @@
 ---
 const routes = {
-    Home: "/",
-    Projects: "/projects",
-    Tutorials: "/tutorials",
-    Docs: "/docs",
-    Blog: "/blog",
+  Home: "/",
+  Projects: "/projects",
+  Tutorials: "/tutorials",
+  Docs: "/docs",
+  Blog: "/blog",
 };
 import "../styles/navbar.scss";
 ---
 
 <header>
-    <nav>
-        <a href="/"><img class="logo" src="/favicon.svg" alt="Logo Icon" /></a>
-        {
-            Object.entries(routes).map(([pageName, path]) => {
-                const isActive =
-                    (Astro.url.pathname.startsWith(path) && path !== "/") ||
-                    Astro.url.pathname === path;
-                return (
-                    <div class="navbar-entry">
-                        <a href={path} class={isActive ? "active" : ""}>
-                            {pageName}
-                        </a>
+  <nav>
+    <a href="/"><img class="logo" src="/favicon.svg" alt="Logo Icon" /></a>
+    {
+      Object.entries(routes).map(([pageName, path]) => {
+        const isActive =
+          (Astro.url.pathname.startsWith(path) && path !== "/") ||
+          Astro.url.pathname === path;
+        return (
+          <div class="navbar-entry">
+            <a href={path} class={isActive ? "active" : ""}>
+              {pageName}
 
-                        {isActive ? (
-                            <div class="highlighter">
-                                <img src="/nav_highlight.svg" />
-                            </div>
-                        ) : null}
-                    </div>
-                );
-            })
-        }
-    </nav>
-    <div>
-        <a href="https://github.com/vaporvee" target="_blank"
-            ><img
-                src="/github-mark.svg"
-                alt="My GitHub account"
-                class="social"
-            /></a
-        >
-        <a href="https://www.linkedin.com/in/yannik-ain/" target="_blank"
-            ><img
-                src="/linkedin-icon.svg"
-                alt="My Linkedin account"
-                class="social"
-            /></a
-        >
-    </div>
+              {isActive ? (
+                <div class="highlighter">
+                  <img src="/nav_highlight.svg" />
+                </div>
+              ) : null}
+            </a>
+          </div>
+        );
+      })
+    }
+  </nav>
+  <div>
+    <a href="https://github.com/vaporvee" target="_blank"
+      ><img src="/github-mark.svg" alt="My GitHub account" class="social" /></a
+    >
+    <a href="https://www.linkedin.com/in/yannik-ain/" target="_blank"
+      ><img
+        src="/linkedin-icon.svg"
+        alt="My Linkedin account"
+        class="social"
+      /></a
+    >
+  </div>
 </header>
