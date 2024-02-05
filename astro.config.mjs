@@ -20,7 +20,7 @@ export default defineConfig({
     remarkPlugins: [remarkDirective, remarkCalloutDirectives, [remarkExternalLinks, {
       target: '_blank'
     }]],
-    drafts: true,
+    drafts: false,
     shikiConfig: {
       theme: 'dracula'
     }
