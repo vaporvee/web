@@ -5,23 +5,10 @@ const title = frontmatter.title + "| Docs";
 ---
 
 <Layout
-  title={title}
-  description="This is my personal website with my projects, docs and other useful stuff."
+    title={title}
+    description="This is my personal website with my projects, docs and other useful stuff."
 >
-  <div class="content">
-    <h1 style="text-align: center;">{frontmatter.title}</h1>
-    <a href={"https://github.com/vaporvee/" + frontmatter.repo}
-      ><img
-        src="/github-mark.svg"
-        style="margin-bottom: -10px; margin-right:3px;"
-      />Respository</a
-    ><br />
-    <br />
-    <hr />
-    <br />
-    <slot />
-    <div class="sidebar">
-      <a href={"/docs/" + frontmatter.repo}>{frontmatter.repo}</a>
+    <div class="content">
+        <h1 style="text-align: center;">{frontmatter.title}</h1><slot />
     </div>
-  </div>
 </Layout>
