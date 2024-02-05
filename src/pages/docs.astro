@@ -16,17 +16,22 @@ const docs = unsortedDocs.sort(
       {
         docs.map((doc) => (
           <div class="second-content">
+            <div style="text-align: left;">
+              <a
+                href={"https://github.com/vaporvee/" + doc.frontmatter.repo}
+                target="_blank"
+              >
+                <img
+                  src="/github-mark.svg"
+                  style="margin-bottom: -10px; margin-right:3px;"
+                />
+                Respository
+              </a>
+            </div>
             <a href={doc.url}>
               <h2>{doc.frontmatter.title}</h2>
             </a>
             <p>{doc.frontmatter.subtitle}</p>
-            <a href={"https://github.com/vaporvee/" + doc.frontmatter.repo}>
-              <img
-                src="/github-mark.svg"
-                style="margin-bottom: -10px; margin-right:3px;"
-              />
-              <p>Respository</p>
-            </a>
             {doc.frontmatter.has_thumbnail ? (
               <a href={doc.url}>
                 <img
