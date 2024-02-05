@@ -1,16 +1,44 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const unsortedDocs = await Astro.glob("./docs/*/*.mdx");
-const docs = unsortedDocs
-    .sort(
-        (a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date),
-    )
-    .filter((doc) => !doc.frontmatter.draft);
+import "../styles/docs.scss";
+const unsortedDocs = await Astro.glob("./docs/*/index.mdx");
+const docs = unsortedDocs.sort(
+  (a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date)
+);
 ---
 
 <Layout
-    title="Docs"
-    description="This is my personal website with my projects, docs and other useful stuff."
+  title="Docs"
+  description="This is my personal website with my projects, docs and other useful stuff."
 >
-    <main><div class="content">Docs (not finished yet)</div></main>
+  <main>
+    <div class="content">
+      <h1>Docs</h1>
+      {
+        docs.map((doc) => (
+          <div class="second-content">
+            <a href={doc.url}>
+              <h2>{doc.frontmatter.title}</h2>
+            </a>
+            <p>{doc.frontmatter.subtitle}</p>
+            <a href={"https://github.com/vaporvee/" + doc.frontmatter.repo}>
+              <img
+                src="/github-mark.svg"
+                style="margin-bottom: -10px; margin-right:3px;"
+              />
+              <p>Respository</p>
+            </a>
+            {doc.frontmatter.has_thumbnail ? (
+              <a href={doc.url}>
+                <img
+                  width="800vh"
+                  src={"/img/docs/thumbnails/" + doc.frontmatter.repo + ".webp"}
+                />
+              </a>
+            ) : null}
+          </div>
+        ))
+      }
+    </div>
+  </main>
 </Layout>

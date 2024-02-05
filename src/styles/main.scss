@@ -25,6 +25,17 @@ h1 {
     margin-inline: 10vw;
     margin-bottom: 11vh;
 }
+.second-content {
+    text-align: center;
+    $second-content-clr: #6e6e6e40;
+    background-color: $second-content-clr;
+    border-radius: 25px;
+    border: 1px solid lighten($second-content-clr, 16%);
+    width: 80vh;
+    padding: 1vh;
+    margin-inline: 10vw;
+    margin-bottom: 11vh;
+}
 
 .sidebar{
     position: absolute;
