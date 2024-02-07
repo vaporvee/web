@@ -7,12 +7,13 @@ import remarkDirective from 'remark-directive';
 import remarkCalloutDirectives from "@microflash/remark-callout-directives";
 import remarkExternalLinks from 'remark-external-links';
 import mdx from "@astrojs/mdx";
-
 import lighthouse from "astro-lighthouse";
+
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [minify(), metaTags(), mdx(), lighthouse()],
+  integrations: [minify(), metaTags(), mdx(), lighthouse(), icon()],
   markdown: {
     rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, {
       behavior: 'wrap'

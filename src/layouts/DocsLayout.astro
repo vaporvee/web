@@ -1,11 +1,13 @@
 ---
 const { frontmatter } = Astro.props;
 import Layout from "../layouts/Layout.astro";
-const title = frontmatter.title + "| Docs";
+import { Icon } from "astro-icon/components";
+import "../styles/sidebar.scss";
+const title = frontmatter.title + " | Docs";
 const unsortedDocs = await Astro.glob("../pages/docs/*/*.mdx");
-const docs = unsortedDocs
-  .sort((a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date))
-  .filter((doc) => doc.frontmatter.repo === frontmatter.repo);
+const docs = unsortedDocs.sort((a, b) =>
+  a.url === "/docs/" + a.frontmatter.repo ? -1 : 1
+);
 ---
 
 <Layout
@@ -13,15 +15,24 @@ const docs = unsortedDocs
   description="This is my personal website with my projects, docs and other useful stuff."
 >
   <div class="sidebar">
-    <a href={"/docs/" + frontmatter.repo}>Home</a><br />
-    {
-      docs.map((page) => (
-        <>
-          <a href={page.url}>{page.frontmatter.title}</a>
-          <br />
-        </>
-      ))
-    }
+    <input type="checkbox" class="sidebar" />
+    <div class="sidebar" style="display: unset;">
+      {
+        docs.map((page) => {
+          const isActive =
+            (Astro.url.pathname.startsWith(page.url) &&
+              page.url !== "/docs/" + page.frontmatter.repo) ||
+            Astro.url.pathname === page.url;
+          return (
+            <a href={page.url} class={isActive ? "active" : ""}>
+              <Icon name="mdi:file-outline" />
+              {page.frontmatter.title} <br />
+            </a>
+          );
+        })
+      }
+    </div>
+    <Icon size={22} name="mdi:chevron-left-circle" />
   </div>
   <div class="content">
     <a href={"https://github.com/vaporvee/" + frontmatter.repo} target="_blank"

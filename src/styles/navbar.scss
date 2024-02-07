@@ -1,3 +1,5 @@
+
+@import './_var.scss';
 header {
     padding-top: 2.5vh;
     padding-bottom: 2.5vh;
@@ -30,7 +32,7 @@ header {
 
             .active {
                 font-family: "Satoshi-Bold";
-                color: #7eca9c;
+                color: $accent;
             }
 
             .highlighter {
