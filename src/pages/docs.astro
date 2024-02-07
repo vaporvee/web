@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
 const unsortedDocs = await Astro.glob("./docs/*/index.mdx");
 const docs = unsortedDocs.sort(
   (a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date)
@@ -16,29 +17,18 @@ const docs = unsortedDocs.sort(
       {
         docs.map((doc) => (
           <div class="second-content">
-            <div style="text-align: left;">
-              <a
-                href={"https://github.com/vaporvee/" + doc.frontmatter.repo}
-                target="_blank"
-              >
-                <img
-                  src="/github-mark.svg"
-                  style="margin-bottom: -10px; margin-right:3px;"
-                />
-                Respository
-              </a>
-            </div>
+            <div style="text-align: left;" />
             <a href={doc.url}>
-              <h2>{doc.frontmatter.title}</h2>
+              <h2>
+                {doc.frontmatter.repo} <Icon name="mdi:arrow-forward-circle" />
+              </h2>
             </a>
             <p>{doc.frontmatter.subtitle}</p>
             {doc.frontmatter.has_thumbnail ? (
-              <a href={doc.url}>
-                <img
-                  width="100%"
-                  src={"/img/docs/thumbnails/" + doc.frontmatter.repo + ".webp"}
-                />
-              </a>
+              <img
+                width="100%"
+                src={"/img/docs/thumbnails/" + doc.frontmatter.repo + ".webp"}
+              />
             ) : null}
           </div>
         ))

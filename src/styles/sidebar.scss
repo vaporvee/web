@@ -1,10 +1,12 @@
 @import "./_var.scss";
 .sidebar {
+  left: 0;
+  top: 0;
+  font-size: 18px;
   display: flex;
   justify-content: space-evenly;
-  .sidebar-entries {
-    opacity: 1;
-  }
+  margin-top: 3vh;
+  width: 20vw;
   a {
     color: white;
     text-decoration: none;
@@ -12,27 +14,8 @@
   .active {
     color: $accent;
   }
-
-  rotate: 0deg;
-  svg {
-    transition: 0.3s ease-in-out;
-    rotate: 0deg;
-  }
-  &:checked ~ {
-    svg {
-      rotate: 180deg;
-    }
-    div {
-      //only works when the checkbox is on the correct line in the astro file
-      margin-left: -330%;
-    }
-  }
-
-  &[type="checkbox"] {
-    position: absolute;
-    transform: scale(2);
-    z-index: 2;
-    &:checked {
-    }
+  .gh-mark {
+    text-decoration: underline;
+    color: $accent;
   }
 }
