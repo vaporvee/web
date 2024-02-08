@@ -1,91 +1,98 @@
-@import './_var.scss';
+@import "./_var.scss";
 
 :root {
-    color-scheme: dark;
+  color-scheme: dark;
 }
 
 body {
-    background-color: $primary;
-    font-family: "Satoshi-Regular", "Arial";
-    font-size: 16px;
-    position: relative;
-    min-height: 95vh;
+  background-color: $primary;
+  font-family: "Satoshi-Regular", "Arial";
+  font-size: 16px;
+  position: relative;
+  min-height: 95vh;
 }
 
 h1 {
-    font-family: "Tanker-Regular", "Arial";
+  font-family: "Tanker-Regular", "Arial";
 }
 
-main{
-    display: flex;
-    justify-content: space-evenly;
+main {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    position: inherit;
-    align-self: center;
-    background-color: $highlight-primary;
-    border-radius: 25px;
-    border: 1px solid lighten($highlight-primary, 16%);
-    box-shadow: 0px 4px 4px 0px #00000040;
-    padding: 2vw;
-    width: 60vw;
-    margin-bottom: 11vh;
-
+  display: flex;
+  flex-direction: column;
+  position: inherit;
+  align-self: center;
+  background-color: $highlight-primary;
+  border-radius: 25px;
+  border: 1px solid lighten($highlight-primary, 16%);
+  box-shadow: 0px 4px 4px 0px #00000040;
+  padding: 2vw;
+  width: 60vw;
+  margin-bottom: 11vh;
 }
 .second-content {
-    align-self: center;
-    text-align: center;
-    $second-content-clr: #6e6e6e40;
-    background-color: $second-content-clr;
-    border-radius: 25px;
-    border: 1px solid lighten($second-content-clr, 16%);
-    width: 42vw;
-    padding: 2vh;
-    margin-inline: 10vw;
-    margin-bottom: 11vh;
+  align-self: center;
+  text-align: center;
+  $second-content-clr: #6e6e6e40;
+  background-color: $second-content-clr;
+  border-radius: 25px;
+  border: 1px solid lighten($second-content-clr, 16%);
+  width: 42vw;
+  padding: 2vh;
+  margin-inline: 10vw;
+  margin-bottom: 11vh;
 }
 
 td {
-    border-inline: 15px solid;
-    border-color: #ffffff00;
+  border-inline: 15px solid;
+  border-color: #ffffff00;
 }
 
-
 b {
-    font-family: "Satoshi-Bold";
-    color: $accent;
+  font-family: "Satoshi-Bold";
+  color: $accent;
 }
 
 a {
-    color: $link;
+  color: $link;
 }
 
-.astro-code {
-    padding: 15px;
-    border-radius: 25px;
-    max-width: 50vw;
+figure {
+  margin: 0;
+}
+
+pre {
+  code {
+    background-color: transparent;
+  }
+  overflow: scroll;
+  display: grid;
+  padding: 15px;
+  margin: 0;
+  border-radius: 25px;
+  max-width: 50vw;
 }
 
 code {
-    background-color: #282a36;
-    padding-inline: 10px;
-    padding-block: 2px;
-    margin: 2px;
-    border-radius: 25px;
+  background-color: #282a36;
+  padding-inline: 10px;
+  padding-block: 2px;
+  border-radius: 25px;
 }
 
 h1,
 h2,
 h3 {
-    a {
-        color: white;
-        text-decoration: none;
-    }
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
 
-svg{
-    margin-bottom: -2px;
+svg {
+  margin-bottom: -2px;
 }

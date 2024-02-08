@@ -4,8 +4,8 @@ import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 import "../styles/sidebar.scss";
 const title = frontmatter.title + " | Docs";
-const unsortedDocs = await Astro.glob("../pages/docs/*/*.mdx");
-const docs = unsortedDocs.sort((a, b) =>
+const unsortedDocs = await Astro.glob("../pages/docs/*/*.{md,mdx}");
+const docs = unsortedDocs.sort((a) =>
   a.url === "/docs/" + a.frontmatter.repo ? -1 : 1
 );
 ---

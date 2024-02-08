@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
-const unsortedDocs = await Astro.glob("./docs/*/index.mdx");
+const unsortedDocs = await Astro.glob("./docs/*/index.{md,mdx}");
 const docs = unsortedDocs.sort(
   (a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date)
 );
