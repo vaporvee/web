@@ -14,8 +14,11 @@
   .active {
     color: $accent;
   }
-  .gh-mark {
+  .repo-link {
     text-decoration: underline;
     color: $accent;
+    &[target="_blank"]::after {
+      background-color: $accent;
+    }
   }
 }

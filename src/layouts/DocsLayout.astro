@@ -23,13 +23,10 @@ const docs = unsortedDocs.sort((a) =>
   <div class="sidebar">
     <div class="sidebar" style="display: unset;">
       <a
-        class="gh-mark"
+        class="repo-link"
         href={"https://github.com/vaporvee/" + frontmatter.repo}
         target="_blank"
-      >
-        <span style="font-size: 14px;">vaporvee /</span>
-        {frontmatter.repo}
-        <Icon name="mdi:external-link" /></a
+        ><span style="font-size: 14px;">vaporvee /</span>{frontmatter.repo}</a
       ><br /><br />
       {
         docs.map((page) => {
