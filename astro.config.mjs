@@ -10,14 +10,23 @@ import rehypePrettyCode from "rehype-pretty-code";
 import codeTheme from "./src/styles/moonlight-ii.json";
 import mdx from "@astrojs/mdx";
 import lighthouse from "astro-lighthouse";
-
 import icon from "astro-icon";
+
+import expressiveCode from "astro-expressive-code";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [minify(), metaTags(), mdx(), lighthouse(), icon()],
+  integrations: [
+    minify(),
+    metaTags(),
+    expressiveCode({ themes: [codeTheme] }),
+    mdx(),
+    lighthouse(),
+    icon(),
+  ],
   markdown: {
-    syntaxHighlight: false, // Disable syntax built-in syntax hightlighting from astro
+    syntaxHighlight: false,
+    // Disable syntax built-in syntax hightlighting from astro
     rehypePlugins: [
       rehypeSlug,
       [
@@ -43,8 +52,5 @@ export default defineConfig({
         },
       ],
     ],
-    shikiConfig: {
-      theme: "dracula",
-    },
   },
 });

@@ -79,16 +79,24 @@ figure {
   margin: 0;
 }
 
-pre {
+.expressive-code {
   code {
     background-color: transparent;
   }
+  pre {
+    background-color: transparent !important;
+    border: transparent !important;
+    background: none !important;
+  }
+  figure {
+    box-shadow: none !important;
+  }
   overflow: scroll;
   display: grid;
-  padding: 15px;
   margin: 0;
-  border-radius: 25px;
   max-width: 50vw;
+  background-color: #282a36;
+  border-radius: 25px;
 }
 
 code {
