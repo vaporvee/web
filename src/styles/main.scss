@@ -91,6 +91,23 @@ figure {
   figure {
     box-shadow: none !important;
   }
+  .copy {
+    button {
+      width: 30px !important;
+      height: 30px !important;
+      margin: 5px !important;
+      border-radius: 25px !important;
+      display: none;
+    }
+  }
+  &:hover {
+    .copy {
+      button {
+        display: inline;
+      }
+    }
+  }
+  position: relative;
   overflow: scroll;
   display: grid;
   margin: 0;

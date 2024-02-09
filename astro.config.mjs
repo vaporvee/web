@@ -19,7 +19,14 @@ export default defineConfig({
   integrations: [
     minify(),
     metaTags(),
-    expressiveCode({ themes: [codeTheme] }),
+    expressiveCode({
+      themes: [codeTheme],
+      styleOverrides: {
+        frames: {
+          tooltipSuccessBackground: "#7ECA9C",
+        },
+      },
+    }),
     mdx(),
     lighthouse(),
     icon(),
