@@ -33,5 +33,8 @@
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.64"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.10.0"
   }
 }
