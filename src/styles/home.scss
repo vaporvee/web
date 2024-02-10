@@ -1,46 +1,96 @@
-main{
-    display: unset;
-    flex-direction: unset;
-    align-items: unset;
+main {
+  display: unset;
+  flex-direction: unset;
+  align-items: unset;
 }
 
 .lines {
-    background-image: url("/diagonal_lines_home.png");
-    background-size: cover;
-    background-repeat: repeat;
-    min-height: 75vh;
-    padding-inline: 10vw;
+  background-image: url("/diagonal_lines_home.png");
+  background-size: cover;
+  background-repeat: repeat;
+  min-height: 75vh;
+  padding-inline: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 
-    .home-main-box {
-        padding-block: 7vh;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  .home-main-box {
+    padding-block: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
 
-        .home-title-box {
-            justify-self: flex-start;
-            margin-right: 5vw;
+    .home-title-box {
+      justify-self: flex-start;
+      margin-right: 5vw;
 
-            h1 {
-                font-size: 72px;
-            }
+      h1 {
+        font-size: 72px;
+        color: #e6e6e6;
+        background: linear-gradient(to right, #e6e6e6 0, white 8%, #e6e6e6 16%);
+        background-position: 0;
+        background-color: #e6e6e6;
+        background-repeat: no-repeat;
+        background-size: 500px;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine 5s infinite linear;
+        animation-fill-mode: forwards;
+        text-size-adjust: none;
+      }
 
-            .home-title {
-                margin: 0;
-                color: #FFF;
-                font-family: "Tanker-Regular";
-            }
-
-            .using-engines {
-                width: 21vw;
-            }
-        }
-    }
-
-    .content {
-        justify-self: flex-end;
+      .home-title {
         margin: 0;
-        margin-top: 2vh;
-        max-width: 500px;
+        color: #fff;
+        font-family: "Tanker-Regular";
+      }
+
+      .using-engines {
+        width: 21vw;
+      }
     }
+  }
+
+  .content {
+    justify-self: flex-end;
+    margin: 0;
+    margin-top: 2vh;
+    max-width: 500px;
+    &p {
+      z-index: 2;
+    }
+    .avatar {
+      position: absolute;
+      top: 0%;
+      right: 0%;
+      width: 4vw;
+      height: 4vw;
+      border-radius: 2.5vw;
+      background-size: cover;
+      transition: opacity 0.5s linear;
+      background-image: url("/img/avatar.webp");
+      z-index: 1;
+      &.portrait {
+        top: 5%;
+        right: 5%;
+        background-image: url("/img/portrait.webp");
+        &:hover {
+          opacity: 100;
+        }
+      }
+      &:hover {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -500px;
+  }
+  100% {
+    background-position: 500px;
+  }
 }

@@ -25,7 +25,7 @@ main {
 .content {
   display: flex;
   flex-direction: column;
-  position: inherit;
+  position: relative;
   align-self: center;
   background-color: $highlight-primary;
   border-radius: 25px;
@@ -42,15 +42,24 @@ main {
   background-color: $second-content-clr;
   border-radius: 25px;
   border: 1px solid lighten($second-content-clr, 16%);
-  width: 30vw;
+  min-width: 30vw;
   padding: 2vh;
+  padding-bottom: 30%;
   margin-inline: 10vw;
   margin-bottom: 11vh;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
 }
 
 td {
   border-inline: 15px solid;
   border-color: #ffffff00;
+}
+
+table{
+  overflow: scroll;
+  display: block;
 }
 
 b {
@@ -70,7 +79,7 @@ a {
       no-repeat center;
     mask: $external_svg
       no-repeat center;
-    background-color: $link; /* This will color the SVG */
+    background-color: $link; // This will color the SVG
   }
   &.social::after {
     content: none;
@@ -137,4 +146,9 @@ h3 {
 
 svg {
   margin-bottom: -2px;
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
 }
