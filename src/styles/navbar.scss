@@ -24,10 +24,15 @@ header {
             align-items: center;
 
             a {
-                color: white;
+                color: lighten($accent,30);
                 text-decoration: none;
                 text-align: center;
                 margin-inline: .9vw;
+                transition: color 0.5s;
+                font-family: "Satoshi-Bold";
+                &:hover{
+                    color: $accent;
+                }
             }
 
             .active {
@@ -44,6 +49,6 @@ header {
 
     .social {
         width: 22px;
-        margin-inline: .5vw;
+        margin-inline: .2vw;
     }
 }

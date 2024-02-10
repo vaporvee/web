@@ -27,6 +27,7 @@ const docs = unsortedDocs.sort(
             {doc.frontmatter.has_thumbnail ? (
               <img
                 width="100%"
+                style="border-radius: 5px;"
                 src={"/img/docs/thumbnails/" + doc.frontmatter.repo + ".webp"}
               />
             ) : null}

@@ -10,6 +10,7 @@ body {
   font-size: 16px;
   position: relative;
   min-height: 95vh;
+  
 }
 
 h1 {
@@ -41,7 +42,7 @@ main {
   background-color: $second-content-clr;
   border-radius: 25px;
   border: 1px solid lighten($second-content-clr, 16%);
-  width: 42vw;
+  width: 30vw;
   padding: 2vh;
   margin-inline: 10vw;
   margin-bottom: 11vh;
@@ -64,14 +65,16 @@ a {
     height: 20px;
     vertical-align: -0.125em;
     content: " ";
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0  0  24  24'%3E%3Cpath fill='%23000' d='M14  3v2h3.59l-9.83  9.83l1.41  1.41L19  6.41V10h2V3m-2  16H5V5h7V3H5a2  2  0  0  0-2  2v14a2  2  0  0  0  2  2h14a2  2  0  0  0  2-2v-7h-2z'/%3E%3C/svg%3E")
+    $external_svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0  0  24  24'%3E%3Cpath fill='%23000' d='M14  3v2h3.59l-9.83  9.83l1.41  1.41L19  6.41V10h2V3m-2  16H5V5h7V3H5a2  2  0  0  0-2  2v14a2  2  0  0  0  2  2h14a2  2  0  0  0  2-2v-7h-2z'/%3E%3C/svg%3E");
+    -webkit-mask: $external_svg
       no-repeat center;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0  0  24  24'%3E%3Cpath fill='%23000' d='M14  3v2h3.59l-9.83  9.83l1.41  1.41L19  6.41V10h2V3m-2  16H5V5h7V3H5a2  2  0  0  0-2  2v14a2  2  0  0  0  2  2h14a2  2  0  0  0  2-2v-7h-2z'/%3E%3C/svg%3E")
+    mask: $external_svg
       no-repeat center;
     background-color: $link; /* This will color the SVG */
   }
   &.social::after {
     content: none;
+    display: unset;
   }
 }
 
