@@ -35,6 +35,7 @@
     "@iconify-json/mdi": "^1.1.64"
   },
   "optionalDependencies": {
+    "@minify-html/node-linux-x64": "^0.15.0",
     "@rollup/rollup-linux-x64-gnu": "^4.10.0"
   }
 }
