@@ -32,9 +32,9 @@ const docs = unsortedDocs.sort((a) =>
       {
         docs.map((page) => {
           const isActive =
-            Astro.url.pathname == page.url ||
+            Astro.url.pathname == page.url + "/" ||
             (Astro.url.pathname.startsWith(page.url) &&
-              page.url !== "/docs/" + page.frontmatter.repo + "/");
+              page.url !== "/docs/" + page.frontmatter.repo);
           return (
             <a href={page.url} class={isActive ? "active" : ""}>
               <Icon name="mdi:file-outline" />
