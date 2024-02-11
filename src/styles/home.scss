@@ -35,7 +35,7 @@ main {
         background-size: 500px;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        animation: shine 5s infinite linear;
+        animation: shine 3s infinite linear;
         animation-fill-mode: forwards;
         text-size-adjust: none;
       }
@@ -88,7 +88,7 @@ main {
 
 @keyframes shine {
   0% {
-    background-position: -500px;
+    background-position: -200px;
   }
   100% {
     background-position: 500px;

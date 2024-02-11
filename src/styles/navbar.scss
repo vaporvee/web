@@ -36,7 +36,6 @@ header {
             }
 
             .active {
-                font-family: "Satoshi-Bold";
                 color: $accent;
             }
 
@@ -50,5 +49,17 @@ header {
     .social {
         width: 22px;
         margin-inline: .2vw;
+    }
+}
+
+.not-responsive-warning{
+    display: none;
+}
+
+@media (max-width: 1000px){
+    .not-responsive-warning{
+        display: flex;
+        font-family: "Satoshi-Bold";
+        padding-bottom: 10px;
     }
 }

@@ -1,0 +1,25 @@
+.donation-callout {
+  text-align: right;
+  .donation-text {
+    display: flex;
+    text-align: left;
+    .heart {
+      width: 50px;
+      margin-right: 20px;
+      align-self: center;
+    }
+  }
+  border-radius: 10px;
+  margin-block: 50px;
+  background-color: #7c7c7c1f;
+  border: 1px solid lighten(#7c7c7c1f, 12%);
+  padding: 20px;
+  font-size: 16px;
+  button {
+    align-self: flex-end;
+    margin: 0;
+    a[target="_blank"]::after {
+      background-color: white;
+    }
+  }
+}

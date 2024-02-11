@@ -2,6 +2,7 @@
 const { frontmatter } = Astro.props;
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import DonationCallout from "../components/DonationCallout.astro";
 import "../styles/sidebar.scss";
 const title = frontmatter.title + " | Docs";
 const unsortedDocs = await Astro.glob("../pages/docs/*/*.{md,mdx}");
@@ -42,6 +43,9 @@ const docs = unsortedDocs.sort((a) =>
           );
         })
       }
+      <DonationCallout
+        text="These projects require a lot of time and effort. If you would like to support this project, consider making a donation of whatever it is worth to you!"
+      />
     </div>
   </div>
 </Layout>

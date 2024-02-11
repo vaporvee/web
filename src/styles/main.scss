@@ -29,10 +29,11 @@ main {
   align-self: center;
   background-color: $highlight-primary;
   border-radius: 25px;
-  border: 1px solid lighten($highlight-primary, 16%);
+  border: 1px solid lighten($highlight-primary, 12%);
   box-shadow: 0px 4px 4px 0px #00000040;
   padding: 2vw;
   width: 60vw;
+
   margin-bottom: 11vh;
 }
 .second-content {
@@ -41,7 +42,7 @@ main {
   $second-content-clr: #6e6e6e40;
   background-color: $second-content-clr;
   border-radius: 25px;
-  border: 1px solid lighten($second-content-clr, 16%);
+  border: 1px solid lighten($second-content-clr, 12%);
   min-width: 30vw;
   padding: 2vh;
   padding-bottom: 30%;
@@ -92,6 +93,7 @@ figure {
 }
 
 .expressive-code {
+  border: 1px solid lighten(#282a36, 10%);
   code {
     background-color: transparent;
   }
@@ -99,9 +101,6 @@ figure {
     background-color: transparent !important;
     border: transparent !important;
     background: none !important;
-  }
-  figure {
-    box-shadow: none !important;
   }
   .copy {
     button {
@@ -125,14 +124,17 @@ figure {
   margin: 0;
   max-width: 50vw;
   background-color: #282a36;
-  border-radius: 25px;
+  border-radius: 20px;
+  .frame.is-terminal .header::before{
+    background-color: gray!important;
+  }
 }
 
 code {
   background-color: #282a36;
   padding-inline: 10px;
   padding-block: 2px;
-  border-radius: 25px;
+  border-radius: 15px;
 }
 
 h1,
@@ -151,4 +153,20 @@ svg {
 img{
   max-width: 100%;
   max-height: 100%;
+}
+
+button{
+  $button-color: #42b971;
+  padding-block: 10px;
+  padding-inline: 20px;
+  margin: 10px;
+  border-radius: 25px;
+  font-family: "Satoshi-Bold";
+  background-color: $button-color;
+  border: 1px solid lighten($button-color, 12%);
+  font-size: 18px;
+  &:active{
+    background-color: darken($button-color,10);
+    transform: translateY(1px);
+  }
 }
