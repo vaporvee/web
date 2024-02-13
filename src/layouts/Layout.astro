@@ -9,10 +9,6 @@ const { description } = Astro.props;
 import "../styles/main.scss";
 import "../styles/callout.scss";
 
-import styles from "../styles/_var.scss";
-const accentColorMatch = styles.match(/accentColor: ([^;]+)/);
-const accentColor = accentColorMatch ? accentColorMatch[1] : "";
-
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
@@ -24,7 +20,7 @@ import { ViewTransitions } from "astro:transitions";
   <head>
     <meta charset="UTF-8" />
     <meta name="darkreader-lock" />
-    <meta name="theme-color" content={accentColor} />
+    <meta name="theme-color" content="#7eca9c" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
