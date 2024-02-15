@@ -8,13 +8,11 @@ const { text } = Astro.props;
 ---
 
 <div class="donation-callout">
-  <div class="donation-text">
-    <img class="heart" src="/img/animated/green-heart.webp" alt="Green Heart" />
-    <p>
-      {text}
-    </p>
-  </div>
-  <button
-    ><a href="https://ko-fi.com/vaporvee" target="_blank">Donate</a></button
-  >
+  <img class="heart" src="/img/animated/green-heart.webp" alt="Green Heart" />
+  <p>
+    {text}<br />
+    <button
+      ><a href="https://ko-fi.com/vaporvee" target="_blank">Donate</a></button
+    >
+  </p>
 </div>
