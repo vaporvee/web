@@ -1,17 +1,17 @@
 ---
 layout: ../../../layouts/DocsLayout.astro
-repo: discord-sdk-godot
+repo: discord-rpc-godot
 title: Activities
 ---
 
 # Variables
 
-Anything of course begins with `DiscordSDK.{:gdscript}` e.g. `DiscordSDK.app_id = #<your Application ID>{:gdscript}`
+Anything of course begins with `DiscordRPC.{:gdscript}` e.g. `DiscordRPC.app_id = #<your Application ID>{:gdscript}`
 ### Rich presence
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `app_id{:gdscript}` | `int{:gdscript}` | The Application ID you need to get to make anything in the SDK → https://discord.com/developers/applications |
+| `app_id{:gdscript}` | `int{:gdscript}` | The Application ID you need to get to make anything in the plugin → https://discord.com/developers/applications |
 | `details{:gdscript}` | `String{:gdscript}` | The first text line visible in the Activity (after the app name) |
 | `state{:gdscript}` | `String{:gdscript}` | The second text line visible in the Activity |
 | `large_image{:gdscript}` | `String{:gdscript}` | Key for the large image you set while uploading an image to the "Rich Presence" → "Art Assets" tab in your online Discord dev panel |
@@ -41,20 +41,20 @@ The values can be pretty anything since there is no lobby system in the SDK anym
 ### Activity join request
 **Connect it with:**
 ```gdscript
-DiscordSDK.connect("activity_join_request",_on_activity_join_request)
+DiscordRPC.connect("activity_join_request",_on_activity_join_request)
 ```
 **Add it in your gdscript as function:**
 ```gdscript
 func _on_activity_join_request(user_requesting):
 ```
 The Signal fires when someone requests to join your Activity via an request join button in Discord.<br/>
-**Given variable:** [`Dictionary user_requesting{:gdscript}`](/docs/discord-sdk-godot/users#get-current-user)
+**Given variable:** [`Dictionary user_requesting{:gdscript}`](/docs/discord-rpc-godot/users#get-current-user)
 <br/>
 <br/>
 ### Activity join
 **Connect it with:**
 ```gdscript
-DiscordSDK.connect("activity_join",_on_activity_join)
+DiscordRPC.connect("activity_join",_on_activity_join)
 ```
 **Add it in your gdscript as function:**
 ```gdscript
@@ -68,7 +68,7 @@ Send the secret to your custom system to generate the other party values and mak
 ### Activity spectate
 **Connect it with:**
 ```gdscript
-DiscordSDK.connect("activity_spectate",_on_activity_spectate)
+DiscordRPC.connect("activity_spectate",_on_activity_spectate)
 ```
 **Add it in your gdscript as function:**
 ```gdscript
@@ -79,20 +79,20 @@ The Signal fires when someone spectates your Activity via an invite or spectate 
 Send the secret to your custom system to generate the other party values and make them the same as the target user.
 # Methods
 ### Refresh
-After setting any variables you have to reload the SDK with this method
+After setting any variables you have to reload the RPC with this method
 ```gdscript
-DiscordSDK.refresh()
+DiscordRPC.refresh()
 ```
 ### Clear
 Disables the Activity.
 ```gdscript
-DiscordSDK.clear(reset_values)
+DiscordRPC.clear(reset_values)
 ```
 **Taken variable:** `bool reset_values{:gdscript}` **Standard value:** `false{:gdscript}`<br/>
 When turning `reset_values{:gdscript}` to `true{:gdscript}` it completely clears the whole activity with its `app_id{:gdscript}` and other values.
 
 ### Unclear
-Reenables the before cleared Activity. Only works with `DiscordSDK.clear(reset_values = false){:gdscript}`(default).
+Reenables the before cleared Activity. Only works with `DiscordRPC.clear(reset_values = false){:gdscript}`(default).
 ```gdscript
-DiscordSDK.unclear()
+DiscordRPC.unclear()
 ```
