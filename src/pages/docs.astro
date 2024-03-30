@@ -18,13 +18,6 @@ const docs = unsortedDocs.sort(
         docs.map((doc) => (
           <div
             class="second-content"
-            style={
-              doc.frontmatter.has_thumbnail
-                ? 'background-image: url("/img/docs/thumbnails/' +
-                  doc.frontmatter.repo +
-                  '.webp")'
-                : ""
-            }
           >
             <div style="text-align: left;" />
             <a href={doc.url}>
@@ -39,7 +32,9 @@ const docs = unsortedDocs.sort(
                 <li>{feature}</li>
               ))}
             </ul>
-          </div>
+            <img class="doc_thumbnail" style={doc.frontmatter.has_thumbnail ? "" : "display:none;"} src={"/img/docs/thumbnails/" + doc.frontmatter.repo + ".webp"} />
+            </div>
+
         ))
       }
     </div>

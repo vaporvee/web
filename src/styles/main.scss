@@ -51,13 +51,19 @@ main {
   border-radius: 25px;
   border: 1px solid lighten($second-content-clr, 12%);
   min-width: 30vw;
-  padding: 2vh;
-  padding-bottom: 32%;
   margin-inline: 10vw;
-  margin-bottom: 11vh;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 100% auto;
+  p, ul,h1,h2,h3{
+    padding-inline: 2vw;
+  }
+}
+.doc_thumbnail{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  margin: -2vh;
+  width: 150%;
+  padding-top: 2vh;
+  border-radius: 0 0 25px 25px;
 }
 
 td {
