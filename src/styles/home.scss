@@ -5,8 +5,17 @@ main {
 }
 
 .lines {
-  background-image: url("/diagonal_lines_home.png");
-  background-size: cover;
+  background-color: #1c1427;
+  background-image: 
+    repeating-linear-gradient(
+      -45deg, 
+      transparent, 
+      transparent 2rem,
+      #1e162a 2rem,
+      #1e162a 4rem
+    );
+  background-size: 100vw 99.3vh;
+  animation: barberpole 8s linear infinite;
   background-repeat: repeat;
   min-height: 75vh;
   padding-inline: 10vw;
@@ -43,7 +52,7 @@ main {
       .home-title {
         margin: 0;
         color: #fff;
-        font-family: "Tanker-Regular";
+        font-family: "Tanker-Regular", "Arial";
       }
 
       .using-engines {
@@ -92,5 +101,11 @@ main {
   }
   100% {
     background-position: 500px;
+  }
+}
+
+@keyframes barberpole {
+  100% {
+    background-position: 100% 100%;
   }
 }
