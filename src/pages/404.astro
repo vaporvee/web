@@ -1,0 +1,23 @@
+
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+const unsortedDocs = await Astro.glob("./docs/*/index.{md,mdx}");
+const docs = unsortedDocs.sort(
+  (a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date)
+);
+---
+
+<Layout
+  title="ERROR 404"
+  description="This is my personal website with my projects, docs and other useful stuff."
+>
+  <main>
+    <div class="center">
+        <h1 style="text-align: center;">ERROR 404</h1>
+        <br/>
+        <p style="font-size: 22px;">The page either never existed or was renamed.<br/>
+            Try something in the navabar above!</p>
+    </div>
+    </main>
+</Layout>
