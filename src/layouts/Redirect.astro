@@ -1,0 +1,28 @@
+---
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+import "../styles/main.scss";
+import "../styles/callout.scss";
+
+import { ViewTransitions } from "astro:transitions";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="darkreader-lock" />
+    <meta name="theme-color" content="#1c1427" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta http-equiv="refresh" content={"0; url=" + href} />
+    <title>Redirecting... | vaporvee's Website</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <a href={href}>Click if not redirecting</a>
+  </body>
+</html>
