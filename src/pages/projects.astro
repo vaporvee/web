@@ -15,7 +15,16 @@ import ProjectCard from "../components/ProjectCard.astro";
   <main>
     <div style="margin-bottom: 20px;">
       <h1 style="text-align: center;">Projects</h1>
-      <ProjectCard name="voicenext" href="https://voicenext.app"
+      <ProjectCard
+        name="voicenext"
+        gallery={[
+          "/img/projects/voicenext/Promo.png",
+          "/img/projects/voicenext/Home.png",
+          "/img/projects/voicenext/Register.png",
+          "/img/projects/voicenext/Settings.png",
+          "/img/projects/voicenext/Settings2.png",
+        ]}
+        href="https://voicenext.app"
         >My team and I are currently working on voicenext, a voice messaging app
         designed to keep communication simple and intuitive. With voicenext, you
         just hold to speak and tap to listen. We are also working on unique
