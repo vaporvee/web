@@ -32,6 +32,7 @@ const { name, href, gallery } = Astro.props;
     max-width: 40vw;
     transition: border-color 0.3s;
     .gallery {
+      margin-top: -25px;
       img {
         max-height: 250px;
         margin: 20px 10px;
@@ -52,7 +53,7 @@ const { name, href, gallery } = Astro.props;
   }
   @media (max-width: $responsive-width) {
     .gallery {
-      margin-top: -30px;
+      margin-top: -3px;
       text-align: center;
       * {
         margin: 2px !important;
@@ -63,8 +64,9 @@ const { name, href, gallery } = Astro.props;
 
 <div class={href ? "content" : "content no-hover"}>
   <a class="project-external" target={href ? "_blank" : ""} href={href}>
-    <h2>{name}</h2><slot /><a
-      ><div class="gallery">
+    <h2>{name}</h2><slot />
+    <a>
+      <div class="gallery">
         {
           Array.isArray(gallery) ? (
             gallery.map((src) => <img loading="lazy" src={src} />)
@@ -72,7 +74,7 @@ const { name, href, gallery } = Astro.props;
             <img loading="lazy" src={gallery as string} />
           )
         }
-      </div></a
-    ></a
-  >
+      </div>
+    </a>
+  </a>
 </div>
