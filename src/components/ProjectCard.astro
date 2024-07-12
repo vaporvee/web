@@ -87,7 +87,7 @@ const { name, href, gallery } = Astro.props;
   <a class="project-external" target={href ? "_blank" : ""} href={href}>
     <h2>{name}</h2><slot />
     <a>
-      <div class="gallery">
+      <div class={gallery ? "gallery" : ""}>
         {
           Array.isArray(gallery) ? (
             gallery.map((src) => (
