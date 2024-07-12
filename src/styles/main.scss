@@ -39,8 +39,7 @@ main {
   border: 1px solid lighten($highlight, 12%);
   box-shadow: 0px 4px 4px 0px #00000040;
   padding: 2vw;
-  width: 65vw;
-
+  padding: 20px;
   margin-bottom: 11vh;
 }
 .second-content {
@@ -180,6 +179,11 @@ button {
 
 @media (max-width: $responsive-width) {
   .content{
-    min-width: 85vw !important;
+    width: 85vw !important;
+  }
+}
+@media (max-width: $responsive-width-secondary) {
+  .content{
+    width: 85vw !important;
   }
 }
