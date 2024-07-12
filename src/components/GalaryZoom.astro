@@ -11,6 +11,7 @@
     width: 100%;
     z-index: 1;
     #zoom-image {
+      user-select: none;
       position: sticky;
       min-height: 20px;
       min-width: 20px;
@@ -24,16 +25,9 @@
     }
     @media (max-width: $responsive-width) {
       #zoom-image {
-        position: sticky;
-        min-height: 20px;
-        min-width: 20px;
         max-height: 100%;
         max-width: 90%;
-        top: 50%;
-        left: 50%;
         transform: translate(-7%, -50%);
-        background-color: white;
-        z-index: 2;
       }
     }
   }
