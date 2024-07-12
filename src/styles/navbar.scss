@@ -28,7 +28,7 @@ header {
                 color: lighten($accent,30);
                 text-decoration: none;
                 text-align: center;
-                margin-inline: .9vw;
+                margin-inline: 8px;
                 transition: color 0.5s;
                 font-family: "Satoshi-Bold";
                 &:hover{
@@ -48,19 +48,21 @@ header {
     }
 
     .social {
-        width: 22px;
-        margin-inline: .2vw;
-    }
-}
-
-.not-responsive-warning{
-    display: none;
-}
-
-@media (max-width: 1000px){
-    .not-responsive-warning{
-        display: flex;
-        font-family: "Satoshi-Bold";
-        padding-bottom: 10px;
+        margin-top: -15px;
+        a{
+            color: white;
+            transition: color 0.5s;
+            .icon{
+                margin: 0;
+                margin-bottom: -5px;
+            }
+            &:hover{
+                color: $accent !important;
+            }
+            &[target="_blank"]::after {
+                content: none;
+                display: unset;
+            }
+        }
     }
 }

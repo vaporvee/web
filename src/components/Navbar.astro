@@ -1,15 +1,18 @@
 ---
 const routes = {
   Home: "/",
+  //Projects: "/projects",
+  //Skills: "/skills",
   Blog: "/blog",
-  Docs: "https://docs.vaporvee.com/",
 };
 import "../styles/navbar.scss";
+import Logo from "../../public/favicon.svg?raw";
+import { Icon } from "astro-icon/components";
 ---
 
 <header>
   <nav>
-    <a href="/"><img class="logo" src="/favicon.svg" alt="Logo Icon" /></a>
+    <a class="logo" href="/"><Fragment set:html={Logo} /></a>
     {
       Object.entries(routes).map(([pageName, path]) => {
         const isActive =
@@ -31,23 +34,18 @@ import "../styles/navbar.scss";
       })
     }
   </nav>
-  <div>
-    <a href="https://github.com/vaporvee" class="social" target="_blank"
-      ><img src="/github-mark.svg" alt="My GitHub account" class="social" /></a
+  <div class="social">
+    <a href="https://github.com/vaporvee" target="_blank"
+      ><Icon class="icon" size={25} name="mdi:github" /></a
     >
+    <a href="https://www.linkedin.com/in/yannik-ain/" target="_blank"
+      ><Icon class="icon" size={25} name="mdi:linkedin" /></a
+    >
+    <span>|</span>
     <a
-      href="https://www.linkedin.com/in/yannik-ain/"
-      class="social"
+      style="font-weight: 700; margin-left: 5px; text-decoration: none; color: white"
       target="_blank"
-      ><img
-        src="/linkedin-icon.svg"
-        alt="My Linkedin account"
-        class="social"
-      /></a
+      href="https://docs.vaporvee.com/#">Docs</a
     >
   </div>
 </header>
-<div class="not-responsive-warning">
-  This website might not be optimized for your device yet and could look
-  unexpected. Consider opening this website on a bigger display.
-</div>

@@ -13,6 +13,7 @@
     "@astrojs/markdown-remark": "^4.2.1",
     "@astrojs/mdx": "^2.1.1",
     "@expressive-code/plugin-shiki": "^0.32.4",
+    "@iconify-json/typcn": "^1.1.9",
     "@microflash/remark-callout-directives": "^2.0.0",
     "astro": "^4.2.6",
     "astro-expressive-code": "^0.32.4",
@@ -32,7 +33,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@iconify-json/mdi": "^1.1.64"
+    "@iconify-json/mdi": "^1.1.67"
   },
   "optionalDependencies": {
     "@esbuild/linux-x64": "^0.20.0",

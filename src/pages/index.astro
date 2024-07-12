@@ -1,8 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/home.scss";
-
-const yannikAge = new Date().getFullYear() - 2004; // 31/12/2003
+import { Icon } from "astro-icon/components";
 ---
 
 <Layout
@@ -12,38 +11,32 @@ const yannikAge = new Date().getFullYear() - 2004; // 31/12/2003
   <div class="lines">
     <div class="home-main-box">
       <div class="home-title-box">
-        <h1 class="home-title" style="font-size: 6vw;">vaporvee</h1>
-        <h2
-          class="home-title"
-          style="font-size: 2vw; margin-top: -10px; margin-bottom: 12vh;"
-        >
-          Making video games
-        </h2>
-        <img
-          class="using-engines"
-          src="/using_engines.svg"
-          alt="engines I'm using"
-        />
+        <h1 class="home-title">vaporvee</h1>
+        <h2 class="home-title home-subtitle">web & game developer</h2>
+        <a href="/projects">
+          <button class="continue"
+            >To my Projects<Icon
+              size={35}
+              class="icon"
+              name="typcn:arrow-right-outline"
+            />
+          </button>
+        </a>
       </div>
       <div class="content">
         <div class="avatar portrait"><div class="avatar"></div></div>
         <p>
           Hello my name is <b>Yannik</b>!<br />
-          I’m a {yannikAge} year old <b>Game Developer</b> living <b
-            >in Germany</b
-          >.<br />
-          I mostly code in C++, Godot Engine's GDScript and C#.<br />
-          I am mostly self taught but i cant really say when i began to learn game
-          developement.<br />
-          Currently i already work at a game studio and i also have my own game side
-          projects and tools.<br />
-          This website will mostly have <a href="/docs">docs</a>, <a
-            href="/tutorials">tutorials</a
-          >, and showcasing of my <a href="/projects">projects</a>. Maybe also
-          some other stuff all around the creative process of game developement
-          or completely unrelated stuff like cooking recepies in my <a
-            href="/blog">blog</a
-          > ;)
+          I’m a <b> web and game developer</b> living <b>in Germany</b>.<br />
+          <br /><br />
+          My primary tools: React, Vue, TypeScript, Godot Engine's GDScript, Golang.
+          <br />
+          While I have some preferred tools, I always choose the best one for the
+          job, even if it's not on my usual list. My goal is to find the right solution
+          for each project.
+          <br />
+          Beyond coding I'm passionate about design, making games / stories, music
+          and cooking.
         </p>
       </div>
     </div>

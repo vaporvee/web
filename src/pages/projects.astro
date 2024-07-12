@@ -2,9 +2,32 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
+<style lang="scss">
+  @import "../styles/_var.scss";
+  .content {
+    padding: 20px;
+    margin: 20px;
+    max-width: 40vw;
+    transition: border-color 0.3s;
+    &:hover {
+      border-color: $link;
+    }
+  }
+  h1 {
+    margin-bottom: 40px;
+  }
+</style>
 <Layout
-    title="Projects"
-    description="This is my personal website with my projects, docs and other useful stuff."
+  title="Projects"
+  description="This is my personal website with my projects, docs and other useful stuff."
 >
-    <main><div class="content">Projects (not finished yet)</div></main>
+  <main>
+    <div>
+      <h1 style="text-align: center;">Projects</h1>
+      <div class="content"><h2>voicenext</h2></div>
+      <div class="content"><h2>SmartCustomerAI</h2></div>
+      <div class="content"><h2>DiscordRPC Godot Plugin</h2></div>
+      <div class="content"><h2>acecore</h2></div>
+    </div>
+  </main>
 </Layout>
