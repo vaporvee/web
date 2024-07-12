@@ -1,18 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
 <style lang="scss">
-  @import "../styles/_var.scss";
-  .content {
-    padding: 20px;
-    margin: 20px;
-    max-width: 40vw;
-    transition: border-color 0.3s;
-    &:hover {
-      border-color: $link;
-    }
-  }
   h1 {
     margin-bottom: 40px;
   }
@@ -24,10 +15,27 @@ import Layout from "../layouts/Layout.astro";
   <main>
     <div>
       <h1 style="text-align: center;">Projects</h1>
-      <div class="content"><h2>voicenext</h2></div>
-      <div class="content"><h2>SmartCustomerAI</h2></div>
-      <div class="content"><h2>DiscordRPC Godot Plugin</h2></div>
-      <div class="content"><h2>acecore</h2></div>
+      <ProjectCard name="voicenext" href="https://voicenext.app"
+        >My team and I are currently working on voicenext, a voice messaging app
+        designed to keep communication simple and intuitive. With voicenext, you
+        just hold to speak and tap to listen. We are also working on unique
+        features that other messaging apps haven't considered because we are
+        solely focused on audio.</ProjectCard
+      >
+      <ProjectCard name="SmartCustomerAI"
+        >I am currently developing a program that can simulate customer calls.
+        For this, I am using the Web Speech Recognition API, OpenAI, and
+        Elevenlabs.</ProjectCard
+      >
+      <ProjectCard
+        name="DiscordRPC Godot Plugin"
+        href="https://github.com/vaporvee/discord-rpc-godot"
+        >The first Discord RPC plugin for the version 4 of the Godot game
+        engine.</ProjectCard
+      >
+      <ProjectCard name="acecore" href="https://github.com/vaporvee/acecore"
+        >Modular multi purpose bot powering your Discord server.</ProjectCard
+      >
     </div>
   </main>
 </Layout>
