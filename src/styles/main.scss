@@ -179,11 +179,6 @@ button {
 
 @media (max-width: $responsive-width) {
   .content{
-    width: 85vw !important;
-  }
-}
-@media (max-width: $responsive-width-secondary) {
-  .content{
-    width: 85vw !important;
+    min-width: 85vw !important;
   }
 }

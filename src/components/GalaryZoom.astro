@@ -1,0 +1,53 @@
+<style lang="scss">
+  @import "../styles/_var.scss";
+  #galary-zoom {
+    display: none;
+    margin: 0;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    #zoom-image {
+      position: sticky;
+      min-height: 20px;
+      min-width: 20px;
+      max-height: 35%;
+      max-width: 40%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      z-index: 2;
+    }
+    @media (max-width: $responsive-width) {
+      #zoom-image {
+        position: sticky;
+        min-height: 20px;
+        min-width: 20px;
+        max-height: 100%;
+        max-width: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-7%, -50%);
+        background-color: white;
+        z-index: 2;
+      }
+    }
+  }
+</style>
+
+<script lang="ts">
+  function maximizeImage(img) {
+    document.getElementById("galary-zoom").style.display = "initial";
+    document.getElementById("zoom-image").src = img.src;
+  }
+  function hide(dom) {
+    document.body.classList.remove("remove-scrolling");
+    dom.style.display = "none";
+  }
+</script>
+
+<div id="galary-zoom" onclick="hide(this)"><img id="zoom-image" /></div>

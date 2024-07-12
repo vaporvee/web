@@ -32,11 +32,27 @@ const { name, href, gallery } = Astro.props;
     max-width: 40vw;
     transition: border-color 0.3s;
     .gallery {
-      margin-top: -25px;
+      margin-top: -30px;
+      margin-bottom: 20px;
+      height: 260px;
       img {
+        position: static;
         max-height: 250px;
         margin: 20px 10px;
         border-radius: 10px;
+        transition: all 0.3s;
+        cursor: pointer;
+        &:hover {
+          &.single {
+            position: relative;
+            height: inherit !important;
+          }
+          & {
+            margin: 0 !important;
+            max-height: 260px;
+            height: 280px;
+          }
+        }
       }
     }
     h2 {
@@ -53,7 +69,8 @@ const { name, href, gallery } = Astro.props;
   }
   @media (max-width: $responsive-width) {
     .gallery {
-      margin-top: -3px;
+      height: initial !important;
+      margin-top: -4px;
       text-align: center;
       * {
         margin: 2px !important;
@@ -62,6 +79,10 @@ const { name, href, gallery } = Astro.props;
   }
 </style>
 
+<script lang="ts"></script>
+
+<div id="galary-zoom"><img id="zoom-image" /></div>
+
 <div class={href ? "content" : "content no-hover"}>
   <a class="project-external" target={href ? "_blank" : ""} href={href}>
     <h2>{name}</h2><slot />
@@ -69,9 +90,16 @@ const { name, href, gallery } = Astro.props;
       <div class="gallery">
         {
           Array.isArray(gallery) ? (
-            gallery.map((src) => <img loading="lazy" src={src} />)
+            gallery.map((src) => (
+              <img onclick="maximizeImage(this)" loading="lazy" src={src} />
+            ))
           ) : (
-            <img loading="lazy" src={gallery as string} />
+            <img
+              class="single"
+              onclick="maximizeImage(this)"
+              loading="lazy"
+              src={gallery as string}
+            />
           )
         }
       </div>

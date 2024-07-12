@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import GalaryZoom from "../components/GalaryZoom.astro";
 ---
 
 <style lang="scss">
@@ -15,6 +16,7 @@ import ProjectCard from "../components/ProjectCard.astro";
   <main>
     <div style="margin-bottom: 20px;">
       <h1 style="text-align: center;">Projects</h1>
+      <GalaryZoom />
       <ProjectCard
         name="voicenext"
         gallery={[
