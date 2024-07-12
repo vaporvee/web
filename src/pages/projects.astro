@@ -13,29 +13,35 @@ import ProjectCard from "../components/ProjectCard.astro";
   description="This is my personal website with my projects, docs and other useful stuff."
 >
   <main>
-    <div>
+    <div style="margin-bottom: 20px;">
       <h1 style="text-align: center;">Projects</h1>
       <ProjectCard name="voicenext" href="https://voicenext.app"
         >My team and I are currently working on voicenext, a voice messaging app
         designed to keep communication simple and intuitive. With voicenext, you
         just hold to speak and tap to listen. We are also working on unique
         features that other messaging apps haven't considered because we are
-        solely focused on audio.</ProjectCard
-      >
-      <ProjectCard name="SmartCustomerAI"
+        solely focused on audio.
+      </ProjectCard>
+      <ProjectCard name="SmartCustomerAI" gallery="/img/projects/sca.png"
         >I am currently developing a program that can simulate customer calls.
         For this, I am using the Web Speech Recognition API, OpenAI, and
-        Elevenlabs.</ProjectCard
-      >
+        Elevenlabs.
+      </ProjectCard>
+      <ProjectCard
+        name="acecore"
+        gallery="/img/projects/acecore.png"
+        href="https://github.com/vaporvee/acecore"
+        >Modular multi purpose bot powering your Discord server.<br />
+        Custom forms with ticket and approve system, tags / custom commands, sticky
+        messages, auto join roles, autopublish, cat pictures and much more
+      </ProjectCard>
       <ProjectCard
         name="DiscordRPC Godot Plugin"
+        gallery="/img/projects/discord-rpc.png"
         href="https://github.com/vaporvee/discord-rpc-godot"
         >The first Discord RPC plugin for the version 4 of the Godot game
-        engine.</ProjectCard
-      >
-      <ProjectCard name="acecore" href="https://github.com/vaporvee/acecore"
-        >Modular multi purpose bot powering your Discord server.</ProjectCard
-      >
+        engine.
+      </ProjectCard>
     </div>
   </main>
 </Layout>

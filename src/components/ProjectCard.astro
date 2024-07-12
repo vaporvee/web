@@ -1,17 +1,20 @@
 ---
+import { array } from "astro/zod";
+
 interface Props {
   name: string;
   href?: string;
+  gallery?: string | string[];
 }
 
-const { name, href } = Astro.props;
+const { name, href, gallery } = Astro.props;
 ---
 
 <style lang="scss">
   @import "../styles/_var.scss";
-
   a {
     color: white;
+    padding: 20px;
     &.project-external {
       text-decoration: none;
       &::after {
@@ -24,10 +27,17 @@ const { name, href } = Astro.props;
     }
   }
   .content {
-    padding: 20px;
+    padding: 0;
     margin: 20px;
     max-width: 40vw;
     transition: border-color 0.3s;
+    .gallery {
+      img {
+        margin-top: 20px;
+        border-radius: 25px;
+        max-width: 250px;
+      }
+    }
     h2 {
       font-size: 20px;
     }
@@ -44,6 +54,8 @@ const { name, href } = Astro.props;
 
 <div class={href ? "content" : "content no-hover"}>
   <a class="project-external" target={href ? "_blank" : ""} href={href}>
-    <h2>{name}</h2><slot />
-  </a>
+    <h2>{name}</h2><slot /><div class="gallery">
+      <img loading="lazy" src={Array.isArray(gallery) ? "" : gallery} />
+    </div></a
+  >
 </div>
