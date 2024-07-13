@@ -16,7 +16,7 @@
       min-height: 20px;
       min-width: 20px;
       max-height: 35%;
-      max-width: 40%;
+      max-width: 50%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -38,10 +38,8 @@
     document.getElementById("galary-zoom").style.display = "initial";
     document.getElementById("zoom-image").src = img.src;
   }
-  function hide(dom) {
-    document.body.classList.remove("remove-scrolling");
-    dom.style.display = "none";
-  }
 </script>
 
-<div id="galary-zoom" onclick="hide(this)"><img id="zoom-image" /></div>
+<div id="galary-zoom" onclick='this.style.display = "none";'>
+  <img id="zoom-image" />
+</div>
