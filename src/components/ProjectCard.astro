@@ -33,7 +33,6 @@ const { name, href, gallery, center, skills } = Astro.props;
     transition: border-color 0.3s;
     .gallery {
       margin: 15px;
-      margin-top: -10px;
       display: flex;
       justify-content: space-between;
       img {
@@ -48,7 +47,7 @@ const { name, href, gallery, center, skills } = Astro.props;
         }
 
         @media (max-width: $responsive-width) {
-          max-height: 12vh !important;
+          max-height: 12.5vh !important;
         }
       }
       @media (max-width: $responsive-width) {
