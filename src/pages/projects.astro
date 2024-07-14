@@ -19,6 +19,20 @@ import GalaryZoom from "../components/GalaryZoom.astro";
       <GalaryZoom />
       <ProjectCard
         name="voicenext"
+        skills={[
+          "React",
+          "TypeScript",
+          "Tailwind",
+          "Bun",
+          "Capacitor.js",
+          "Astro",
+          "React Native",
+          "Python",
+          "Tauri",
+          "Android",
+          "iOS",
+          "Git",
+        ]}
         center={true}
         gallery={[
           "/img/projects/voicenext/Promo.png",
@@ -34,13 +48,24 @@ import GalaryZoom from "../components/GalaryZoom.astro";
         features that other messaging apps haven't considered because we are
         solely focused on audio.
       </ProjectCard>
-      <ProjectCard name="SmartCustomerAI" gallery="/img/projects/sca.png"
+      <ProjectCard
+        name="SmartCustomerAI"
+        skills={[
+          "Vue",
+          "TypeScript",
+          "Bun",
+          "OpenAI API",
+          "Elevenlabs API",
+          "Git",
+        ]}
+        gallery="/img/projects/sca.png"
         >I am currently developing a program that can simulate customer calls.
         For this, I am using the Web Speech Recognition API, OpenAI, and
         Elevenlabs.
       </ProjectCard>
       <ProjectCard
         name="acecore"
+        skills={["Go", "Python", "Git", "Linux"]}
         gallery="/img/projects/acecore.png"
         href="https://github.com/vaporvee/acecore"
         >Modular multi purpose bot powering your Discord server.<br />
@@ -49,6 +74,7 @@ import GalaryZoom from "../components/GalaryZoom.astro";
       </ProjectCard>
       <ProjectCard
         name="DiscordRPC Godot Plugin"
+        skills={["Godot", "C++", "Python", "Git", "Linux"]}
         gallery="/img/projects/discord-rpc.png"
         href="https://github.com/vaporvee/discord-rpc-godot"
         >The first Discord RPC plugin for the version 4 of the Godot game
@@ -56,6 +82,7 @@ import GalaryZoom from "../components/GalaryZoom.astro";
       </ProjectCard>
       <ProjectCard
         name="Astro.js GitHub Component"
+        skills={["TypeScript", "Astro", "Git"]}
         href="https://github.com/vaporvee/astro-github-component"
         >Adds a component to astro with statically built GitHub info and dynamic
         updated stars and forks. Supports GitHub auth tokens in the built

@@ -8,6 +8,7 @@
 ::selection {
   background-color: $accent;
 }
+
 ::marker {
   color: $accent;
 }
@@ -43,6 +44,7 @@ main {
   padding: 20px;
   margin-bottom: 11vh;
 }
+
 .second-content {
   align-self: center;
   text-align: center;
@@ -52,7 +54,12 @@ main {
   border: 1px solid lighten($second-content-clr, 12%);
   min-width: 30vw;
   margin-inline: 10vw;
-  p, ul,h1,h2,h3{
+
+  p,
+  ul,
+  h1,
+  h2,
+  h3 {
     padding-inline: 2vw;
   }
 }
@@ -67,13 +74,16 @@ table {
   display: block;
 }
 
-b, strong {
+b,
+strong {
   font-family: "Satoshi-Bold";
   color: $accent;
 }
+
 a {
   color: $link;
-  &[target="_blank"]::after{
+
+  &[target="_blank"]::after {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -92,14 +102,17 @@ figure {
 
 .expressive-code {
   border: 1px solid lighten(#282a36, 10%);
+
   code {
     background-color: transparent;
   }
+
   pre {
     background-color: transparent !important;
     border: transparent !important;
     background: none !important;
   }
+
   .copy {
     button {
       width: 30px !important;
@@ -109,6 +122,7 @@ figure {
       display: none;
     }
   }
+
   &:hover {
     .copy {
       button {
@@ -116,6 +130,7 @@ figure {
       }
     }
   }
+
   & {
     position: relative;
     overflow: scroll;
@@ -125,6 +140,7 @@ figure {
     background-color: #282a36;
     border-radius: 20px;
   }
+
   .frame.is-terminal .header::before {
     background-color: gray !important;
   }
@@ -164,6 +180,7 @@ button {
   background-color: $button-color;
   border: 1px solid lighten($button-color, 12%);
   font-size: 18px;
+
   &:active {
     background-color: darken($button-color, 10);
     transform: translateY(1px);
@@ -179,12 +196,13 @@ button {
 }
 
 @media (max-width: $responsive-width) {
-  .content{
+  .content {
     min-width: 50vw !important;
   }
 }
+
 @media (max-width: $responsive-width-secondary) {
-  .content{
+  .content {
     min-width: 85vw !important;
   }
 }

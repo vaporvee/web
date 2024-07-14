@@ -1,12 +1,4 @@
-type Skill = {
-    [name: string]: {
-        iconName: string
-        url?: string
-        color?: string
-    }
-}
-
-const skills: Skill = {
+const skilllist = {
     "React": {
         iconName: "mdi:react",
         url: "https://react.dev/",
@@ -94,6 +86,7 @@ const skills: Skill = {
     },
     "Bun": {
         iconName: "logos:bun",
+        color:"#FBF0DF",
         url: "https://bun.sh/"
     },
     "Blender": {
@@ -121,6 +114,15 @@ const skills: Skill = {
     "Adobe Indesign": {
         iconName: "logos:adobe-indesign"
     }
+} as const;
+
+type Skill = {
+    iconName: string
+    url?: string
+    color?: string
 }
 
+type SkillKey = keyof typeof skilllist;
+const skills: Record<SkillKey, Skill> = skilllist
 export { skills }
+export type { SkillKey }

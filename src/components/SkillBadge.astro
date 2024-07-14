@@ -1,0 +1,56 @@
+---
+import { Icon } from "astro-icon/components";
+import { skills } from "../data/skills";
+import type { SkillKey } from "../data/skills";
+interface Props {
+  key: SkillKey;
+}
+const { key } = Astro.props;
+---
+
+<style lang="scss">
+  @import "../styles/_var.scss";
+  .icon {
+    color: white;
+    margin-block: 10px;
+  }
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    &:hover {
+      .tooltiptext {
+        visibility: visible;
+      }
+    }
+    .tooltiptext {
+      visibility: hidden;
+      background-color: $primary;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+      border: 2px solid;
+      position: absolute;
+      z-index: 1;
+      width: 120px;
+      bottom: 85%;
+      left: 50%;
+      margin-left: -60px;
+    }
+  }
+</style>
+
+<div class="tooltip">
+  <span style={"border-color:" + skills[key].color} class="tooltiptext"
+    ><a
+      style={skills[key].url ? "" : "color: #fff"}
+      href={skills[key].url}
+      target={skills[key].url ? "_blank" : ""}>{key}</a
+    ></span
+  >
+  <Icon
+    name={skills[key].iconName}
+    size={25}
+    class="icon"
+    style={"color:" + skills[key].color}
+  />
+</div>

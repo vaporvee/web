@@ -1,14 +1,14 @@
 ---
-import { array } from "astro/zod";
-
+import SkillBadge from "./SkillBadge.astro";
+import type { SkillKey } from "../data/skills";
 interface Props {
   name: string;
+  skills: SkillKey[];
   href?: string;
   gallery?: string | string[];
   center?: true;
 }
-
-const { name, href, gallery, center } = Astro.props;
+const { name, href, gallery, center, skills } = Astro.props;
 ---
 
 <style lang="scss">
@@ -32,15 +32,28 @@ const { name, href, gallery, center } = Astro.props;
     max-width: 40vw;
     transition: border-color 0.3s;
     .gallery {
-      margin-top: -30px;
+      margin: 15px;
+      margin-top: -10px;
+      display: flex;
+      justify-content: space-between;
       img {
         max-height: 250px;
-        margin: 20px 10px;
+        max-width: 100%;
         border-radius: 10px;
         transition: transform 0.3s;
         cursor: pointer;
+
         &:hover {
           transform: scale(1.1);
+        }
+
+        @media (max-width: $responsive-width) {
+          max-height: 12vh !important;
+        }
+      }
+      @media (max-width: $responsive-width) {
+        .single {
+          max-height: 17vh !important;
         }
       }
     }
@@ -56,47 +69,35 @@ const { name, href, gallery, center } = Astro.props;
       border: 1px solid lighten($highlight, 12%);
     }
   }
-  @media (max-width: $responsive-width) {
-    .gallery {
-      margin-top: -4px;
-      text-align: center;
-      img {
-        max-height: 15vh !important;
-      }
-      * {
-        margin: 2px !important;
-      }
-    }
-  }
 </style>
-
-<script lang="ts"></script>
 
 <div id="galary-zoom"><img id="zoom-image" /></div>
 
 <div class={href ? "content" : "content no-hover"}>
   <a class="project-external" target={href ? "_blank" : ""} href={href}>
-    <h2>{name}</h2><slot />
-    <a>
-      <div
-        style={center ? "text-align: center;" : ""}
-        class={gallery ? "gallery" : ""}
-      >
-        {
-          Array.isArray(gallery) ? (
-            gallery.map((src) => (
-              <img onclick="maximizeImage(this)" loading="lazy" src={src} />
-            ))
-          ) : (
-            <img
-              class="single"
-              onclick="maximizeImage(this)"
-              loading="lazy"
-              src={gallery as string}
-            />
-          )
-        }
-      </div>
-    </a>
+    <h2>{name}</h2><slot /><br />
   </a>
+  <div style="margin-inline: 20px;">
+    <b style="color: #fff;">Tools used:</b><br />
+    {skills.map((skill: SkillKey) => <SkillBadge key={skill} />)}
+  </div><br />
+  <div
+    style={center ? "text-align: center;" : ""}
+    class={gallery ? "gallery" : ""}
+  >
+    {
+      Array.isArray(gallery) ? (
+        gallery.map((src) => (
+          <img onclick="maximizeImage(this)" loading="lazy" src={src} />
+        ))
+      ) : (
+        <img
+          class="single"
+          onclick="maximizeImage(this)"
+          loading="lazy"
+          src={gallery as string}
+        />
+      )
+    }
+  </div>
 </div>
