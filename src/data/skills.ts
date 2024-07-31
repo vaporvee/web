@@ -113,6 +113,11 @@ const skilllist = {
     },
     "Adobe Indesign": {
         iconName: "logos:adobe-indesign"
+    },
+    "Docker":{
+        iconName: "mdi:docker",
+        url: "https://www.docker.com/",
+        color: "#1d63ed"
     }
 } as const;
 
