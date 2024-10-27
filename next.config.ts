@@ -16,9 +16,9 @@ const nextConfig: NextConfig = {
   headers: async () => {
     return [
       {
-        source: "/**",
         headers: [
           {
+            source: "/:path*",
             key: "X-Frame-Options",
             value: "ALLOWALL"
           },
