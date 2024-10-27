@@ -8,11 +8,24 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "packageManager": "bun@1.1.33",
   "dependencies": {
+    "@sanity/image-url": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.453.0",
     "next": "15.0.1",
+    "next-sanity": "^9.8.7",
+    "next-themes": "^0.3.0",
     "react": "19.0.0-rc-69d4b800-20241021",
     "react-dom": "19.0.0-rc-69d4b800-20241021",
-    "sass": "^1.80.4"
+    "react-error-boundary": "^4.1.2",
+    "sanity": "^3.62.2",
+    "sass": "^1.80.4",
+    "sonner": "^1.5.0",
+    "styled-components": "6",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "typescript": "^5",
