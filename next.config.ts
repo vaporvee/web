@@ -13,7 +13,19 @@ const nextConfig: NextConfig = {
       }
     ]
   },
-
+  headers: async () => {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "X-Frame-Options",
+            value: "ALLOWALL"
+          },
+        ]
+      }
+    ];
+  },
 };
 
 export default nextConfig;
