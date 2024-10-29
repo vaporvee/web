@@ -8,7 +8,6 @@ import { Post, SanityImageAsset } from "@/sanity/sanity.types";
 import urlBuilder from "@sanity/image-url";
 import {getImageDimensions} from '@sanity/asset-utils'
 import { Refractor } from 'react-refractor'
-import js from 'refractor/lang/javascript'
 
 const POST_QUERY = defineQuery(`*[_type == "post" && slug.current == $slug][0]`);
 const POSTS_QUERY = defineQuery(`*[_type == "post"]{slug}`)
@@ -43,10 +42,10 @@ export default async function PostPage(props: { params: PageParams }) {
 
   const postImageUrl = post.mainImage ? urlFor(post.mainImage)?.width(550).height(310).url() : null;
 
-  function Code(props: {language: string, code: string, highlightedLines: number[]}) {
+  function Code(props: {language: string | undefined, code: string, highlightedLines: number[]}) {
     return (
       <Refractor
-        language={props.language}
+        language={props.language || "text" }
         value={props.code}
         markers={props.highlightedLines}
       />
@@ -94,7 +93,7 @@ export default async function PostPage(props: { params: PageParams }) {
       <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
       <div className="prose">
         <p>Published: {new Date(post.publishedAt ?? "").toISOString().substring(0, 10)}</p>
-        {Code({language: post.myCodeField?.language ?? "", code: post.myCodeField?.code ?? "", highlightedLines: post.myCodeField?.highlightedLines ?? []})}
+        {Code({language: post.myCodeField?.language, code: post.myCodeField?.code ?? "", highlightedLines: post.myCodeField?.highlightedLines ?? []})}
         {Array.isArray(post.body) && <PortableText value={post.body} components={ { types: { image: PortableImage } } } />}
       </div>
     </main>
