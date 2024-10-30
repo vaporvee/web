@@ -55,6 +55,7 @@ export default async function PostPage(props: { params: PageParams }) {
       height={height}
       alt={value.altText || ' '}
       loading="lazy"
+      id={value._id}
       style={{
         display: isInline ? 'inline-block' : 'block',
         aspectRatio: width / height,
