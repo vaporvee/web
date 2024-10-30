@@ -5,7 +5,6 @@ import { client, sanityFetch } from "../../../sanity/client";
 import Link from "next/link";
 import Image from "next/image";
 import { Post, SanityImageAsset } from "@/sanity/sanity.types";
-import urlBuilder from "@sanity/image-url";
 import {getImageDimensions} from '@sanity/asset-utils'
 
 const POST_QUERY = defineQuery(`*[_type == "post" && slug.current == $slug][0]`);
@@ -29,7 +28,7 @@ export async function generateStaticParams() {
 export default async function PostPage(props: { params: PageParams }) {
   const { slug } = await props.params;
   
-  const post: Post = (await sanityFetch({ query: POST_QUERY, params: { slug }, stega: true })).data;
+  const post: Post = (await sanityFetch({ query: POST_QUERY, params: { slug } })).data;
 
   if (!post) {
     return (
@@ -41,29 +40,41 @@ export default async function PostPage(props: { params: PageParams }) {
 
   const postImageUrl = post.mainImage ? urlFor(post.mainImage)?.width(550).height(310).url() : null;
 
-  function PortableImage({ value, isInline }: { value: SanityImageAsset; isInline: boolean }) {
+  function dynamicHeight(originalHeight: number, originalWidth: number, isInline: boolean) {
+    const targetWidth = isInline ? 100 : 768;
+    return (targetWidth * originalHeight) / originalWidth;
+}
+
+  function PortableImage({ value, isInline }: { value: SanityImageAsset, isInline: boolean } ) {
     const {width, height} = getImageDimensions(value)
-    return <Image
-      src={urlBuilder()
-        .projectId(projectId ?? "")
-        .dataset(dataset ?? "")
-        .image(value)
-        .width(isInline ? 100 : 600)
-        .fit('max')
-        .auto('format')
-        .url()}
-      width={isInline ? 100 : 600}
-      height={height}
-      alt={value.altText || ' '}
-      loading="lazy"
-      id={value._id}
-      style={{
-        display: isInline ? 'inline-block' : 'block',
-        aspectRatio: width / height,
-        borderRadius: ".6rem",
-        border: "1px solid rgba(255, 255, 255, .15)",
-      }}
-    />;
+    console.log(isInline, width, height);
+    return (
+      <Image
+        src={imageUrlBuilder()
+          .projectId(projectId ?? "")
+          .dataset(dataset ?? "")
+          .image(value)
+          .width(isInline ? 100 : 768)
+          .fit('max')
+          .auto('format')
+          .url()}
+        width={isInline ? (width >= 100 ? 100 : width) : (width >= 768 ? 768 : width)}
+        height={dynamicHeight(height, width, isInline)}
+        alt={value.altText || ' '}
+        loading="lazy"
+        className="border rounded-lg shadow-md"
+        style={{
+          display: isInline ? 'inline-block' : 'block',
+          aspectRatio: width / height,
+        }}
+      />
+    )
+  }
+
+  const components = {
+    types: {
+        image: PortableImage
+    }
   }
 
   return (
@@ -83,7 +94,7 @@ export default async function PostPage(props: { params: PageParams }) {
       <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
       <div className="prose">
         <p>Published: {new Date(post.publishedAt ?? "").toISOString().substring(0, 10)}</p>
-        {Array.isArray(post.body) && <PortableText value={post.body} components={ { types: { image: PortableImage } } } />}
+        {Array.isArray(post.body) && <PortableText value={post.body} components={ components } />}
       </div>
     </main>
   );
