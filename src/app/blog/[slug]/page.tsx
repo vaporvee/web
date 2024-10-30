@@ -29,7 +29,7 @@ export async function generateStaticParams() {
 export default async function PostPage(props: { params: PageParams }) {
   const { slug } = await props.params;
   
-  const post: Post = (await sanityFetch({ query: POST_QUERY, params: { slug } })).data;
+  const post: Post = (await sanityFetch({ query: POST_QUERY, params: { slug }, stega: true })).data;
 
   if (!post) {
     return (
@@ -45,11 +45,12 @@ export default async function PostPage(props: { params: PageParams }) {
     const {width, height} = getImageDimensions(value)
     return <Image
       src={urlBuilder()
+        .projectId(projectId ?? "")
+        .dataset(dataset ?? "")
         .image(value)
         .width(isInline ? 100 : 600)
         .fit('max')
         .auto('format')
-        .withOptions({dataset, projectId})
         .url()}
       width={isInline ? 100 : 600}
       height={height}
