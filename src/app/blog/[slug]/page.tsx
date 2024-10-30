@@ -1,7 +1,7 @@
 import { defineQuery, PortableText } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import { client, sanityFetch } from "../../sanity/client";
+import { client, sanityFetch } from "../../../sanity/client";
 import Link from "next/link";
 import Image from "next/image";
 import { Post, SanityImageAsset } from "@/sanity/sanity.types";
@@ -66,8 +66,8 @@ export default async function PostPage(props: { params: PageParams }) {
 
   return (
     <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col gap-4">
-      <Link href="/" className="hover:underline">
-        ← Back to posts
+      <Link href="/blog" className="hover:underline">
+        ← Blog
       </Link>
       {postImageUrl && (
         <Image

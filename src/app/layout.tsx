@@ -5,7 +5,6 @@ import { draftMode } from "next/headers";
 import { VisualEditing } from 'next-sanity'
 import { SanityLive } from '@/sanity/client'
 import { LiveErrorBoundary } from "./live-error-boundary";
-import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -27,6 +26,13 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/manifest.webmanifest" />
+      <title>vaporvee's Website</title>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -35,7 +41,6 @@ export default async function RootLayout({
           <SanityLive />
         </LiveErrorBoundary>
         {isEnabled && <VisualEditing />}
-        <Toaster />
       </body>
     </html>
   );
