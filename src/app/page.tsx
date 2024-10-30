@@ -13,7 +13,7 @@ export default async function IndexPage() {
         <Link href="/blog">Blog</Link><br/><br/>
         {home ? (
           <>
-            <h1 className="text-4xl font-bold mb-8">{home.title}</h1>
+            <h1 className="text-4xl font-bold mb-8">{home.pagetitle}</h1>
             <h2 className="text-2xl font-semibold mb-4">{home.subtitle}</h2>
           </>
         ) : (

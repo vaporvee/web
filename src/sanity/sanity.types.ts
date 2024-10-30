@@ -149,6 +149,7 @@ export type Home = {
   _updatedAt: string
   _rev: string
   title?: string
+  pagetitle?: string
   subtitle?: string
   owner?: {
     _ref: string
