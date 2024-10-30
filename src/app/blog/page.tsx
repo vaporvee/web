@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { type SanityDocument } from "next-sanity";
 
-import { client, sanityFetch } from "@/sanity/client";
+import { sanityFetch } from "@/sanity/client";
 import { Post } from "@/sanity/sanity.types";
 
 const POSTS_QUERY = `*[
